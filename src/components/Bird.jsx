@@ -14,10 +14,7 @@ import { ReflectorForSSRPass } from 'three/examples/jsm/Addons.js'
 export default function Model(props) {
     const ref=useRef()
     useFrame((state,delta)=>{
-        if(!!group.current){
-            const {x,y}=state.mouse;
-            ref.current.setAzimuthalAngle(-x*5);
-        }
+        group.current.rotation.y+=delta;
     },[ref.current])
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('/phoenix_bird.glb')

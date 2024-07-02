@@ -11,13 +11,29 @@ import { Html, OrbitControls, useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber';
 
 export default function Model(props) {
+  const width=window.innerWidth
+  let arr=width>1000?[0,-2,0]:[0,0,0]
+  let arr1=width<700?[-2,-0.5,0.5]:[0.2,0.3,1]
+  let arr2=width<700?[-1,-2,0.5]:[-0.2,0,-1]
+  if(width<1000 && width>700){
+    arr1=[-3,-1,0]
+    arr2=[0.6,-1.2,0]
+  }
+  if(width<400){
+    arr1=[-1.8,-1,0]
+    arr2=[-1,-2.5,0]
+  }
+  if(width>1000){
+    arr1=[-6,-1,0]
+    arr2=[2,-1.5,0]
+  }
     const group=useRef();
     const ref=useRef();
     useFrame((state,delta)=>{
-      group.current.position.y=(Math.sin(state.clock.elapsedTime)-2);
+      group.current.rotation.y=(Math.tan(state.clock.elapsedTime/5));
         if(!!ref.current){
             const {x,y}=state.mouse;
-            ref.current.setAzimuthalAngle(-x*Math.PI/4);
+            // ref.current.setAzimuthalAngle(-x*Math.PI/4);
             // ref.current.setPolarAngle((y+0.4)*Math.PI)
         }
     })
@@ -25,10 +41,12 @@ export default function Model(props) {
   return (
     <>
     <OrbitControls enableZoom={false} enableRotate={false} ref={ref}/>
-    <group {...props} dispose={null} ref={group}>
-    <Html className='text-white text-5xl font-extrabold stylish-regular shadow' position={[-0.2,0.8,0.3]}>NITHIN'S</Html>
-    <Html className='text-red-600 text-8xl font-extrabold stylish-regular ' position={[0.2,0.4,1]}>Creative</Html>
-    <Html className='text-white text-7xl font-extrabold stylish-regular -z-50' position={[-0.2,-0,-1]}>Portfolio</Html>
+    <group>
+    <Html className='text-white text-5xl font-extrabold stylish-regular shadow' position={[-1,3,0.3]}>NITHIN'S</Html>
+    <Html className='text-red-600 text-8xl font-extrabold stylish-regular ' position={arr1}>Creative</Html>
+    <Html className='text-white text-7xl font-extrabold stylish-regular -z-50' position={arr2}>Portfolio</Html>
+    </group>
+    <group {...props} dispose={null} ref={group} position={arr} scale={width<700?width/100:width/150}>
       <mesh
         castShadow
         receiveShadow

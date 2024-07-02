@@ -29,6 +29,13 @@ body{
     padding: 0.5rem;
     border: 2px solid #e2cc8a;
   }
+  .shadow-skill{
+    background: radial-gradient(#e2cc8a,white);
+    box-shadow: 0rem 0rem 1rem 0rem #eeb8b8;
+    border-radius: 1rem;
+    color: #19253f;
+    padding: 0.5rem;
+  }
 
 .playwrite-au-sa-p {
   font-family: "Playwrite AU SA", cursive;
@@ -85,4 +92,15 @@ body{
   font-family: "Ubuntu", sans-serif;
   font-weight: 700;
   font-style: italic;
+}
+.ani{
+  animation: red-light 4s ease-in-out 0s;
+}
+@keyframes red-light {
+  from{
+    box-shadow: 0rem 0rem 0rem 0rem;
+  }
+  to{
+    box-shadow: 1rem 1rem 5rem 3rem red;
+  }
 }

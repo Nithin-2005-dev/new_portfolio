@@ -28,7 +28,7 @@ export default function Model(props) {
   const { nodes, materials } = useGLTF('/old_computers.glb')
   return (
     <group {...props} dispose={null} ref={ref}>
-    <OrbitControls enableRotate={true} enableZoom={false} maxAzimuthAngle={[0.4]} minAzimuthAngle={[-0.4]} minPolarAngle={[1.57]} maxPolarAngle={[1.57]}/>
+    <OrbitControls enableRotate={true} enableZoom={false} maxAzimuthAngle={[-0.4]} minAzimuthAngle={[-0.4]} minPolarAngle={[1.57]} maxPolarAngle={[1.57]} enablePan={false}/>
       <group position={[0.27, 5, -2.613]}>
         <mesh
           castShadow
@@ -43,21 +43,21 @@ export default function Model(props) {
           material={materials.Screen}
         />
       </group>
-      <group position={[-5,6,-5]} rotation={[0,-1,0]}>
+      <group position={[-5,8,-5]} rotation={[0,-1,0]}>
       <Html>
       <div className="flex flex-wrap justify-center content-center text-white text-6xl rounded-lg">
       <div className="self-center text-center font-bold [text-shadow:_0rem_0.1rem_0.5rem_rgb(255_244_255_/_100%)] cursor-pointer" style={{width:window.innerWidth>900?"50vw":"70vw"}}>skills</div>
-      <MdHtml className="shadow m-3" />
-      <MdCss className="shadow m-3"/>
-      <AiOutlineJavaScript className="shadow m-3"/>
-      <FaJava className="shadow m-3" />
-      <FaReact className="shadow m-3" />
-      <IoLogoFirebase className="shadow m-3"/>
-      <RiTailwindCssFill className="shadow m-3"/>
-      <RiBootstrapLine className="shadow m-3"/>
-      <SiAdobephotoshop className="shadow m-3"/>
-      <TbCircleLetterC className="shadow m-3"/>
-      <SiThreedotjs className="shadow m-3"/>
+      <MdHtml className="shadow-skill m-3" />
+      <MdCss className="shadow-skill m-3"/>
+      <AiOutlineJavaScript className="shadow-skill m-3"/>
+      <FaJava className="shadow-skill m-3" />
+      <FaReact className="shadow-skill m-3" />
+      <IoLogoFirebase className="shadow-skill m-3"/>
+      <RiTailwindCssFill className="shadow-skill m-3"/>
+      <RiBootstrapLine className="shadow-skill m-3"/>
+      <SiAdobephotoshop className="shadow-skill m-3"/>
+      <TbCircleLetterC className="shadow-skill m-3"/>
+      <SiThreedotjs className="shadow-skill m-3"/>
       </div>
       </Html>
       </group>

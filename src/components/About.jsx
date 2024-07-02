@@ -4,6 +4,7 @@ import React, { Suspense } from 'react'
 import Computer from './Computer'
 import AboutCard from './AboutCard'
 import {AnimatePresence, motion} from 'framer-motion'
+import Loader from './Loader'
 const About = () => {
   const data=[{id:1,head:"Innovator at heart",body:"As an innovator at heart, I am constantly exploring new ideas and pushing boundaries. My passion for creativity drives me to develop unique solutions and transform concepts into reality. I thrive on challenges and believe in the power of innovation to make a meaningful impact"},
   {id:2,head:"Creative problem solver",body:"Creative problem solver with a knack for thinking outside the box. I approach challenges with a blend of creativity and analytical thinking, crafting innovative solutions that address complex issues. My goal is to find effective and imaginative ways to overcome obstacles and achieve success."},
@@ -40,11 +41,23 @@ const About = () => {
       return <AboutCard direction={index.id} head={index.head} body={index.body} key={index}/>
     })}
     </motion.div>
-    <Suspense>
-    <Canvas style={{height:"100vh"}}>
+    <Suspense fallback={<Loader/>}>
+    <motion.div initial={{opacity:0}} whileInView={{
+      opacity:1,
+      transition:{
+        duration:3,
+      }
+    }}
+    viewport={{
+      amount:0.5,
+      once:false
+    }}
+    >
+    <Canvas style={{height:"80vh"}}>
       <Computer scale={window.screen.width<900?window.screen.width/1000:window.screen.width/2000} position={[0,-1,1]} rotation={[0,-0.2,0]}></Computer>
       <Environment preset='city'/>
     </Canvas>
+    </motion.div>
     </Suspense>
     </AnimatePresence>
    </>
