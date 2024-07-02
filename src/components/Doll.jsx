@@ -6,7 +6,7 @@ Source: https://sketchfab.com/3d-models/ruin-helpi-85daccc4eafd4a5eaad7d628d8423
 Title: Ruin Helpi
 */
 
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useGLTF, useAnimations, OrbitControls } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber';
 
@@ -25,7 +25,11 @@ export default function Doll(props) {
         }
     },[ref.current])
   const { nodes, materials, animations } = useGLTF('/ruin_helpi.glb')
-  const { actions } = useAnimations(animations, group)
+  const { actions,names } = useAnimations(animations, group)
+  useEffect(()=>{
+    console.log(names)
+    actions[names[0]].reset().fadeIn(6).play();
+  },[])
   return (<>
     <OrbitControls enableRotate={true} ref={ref} minPolarAngle={[3.145/6]} maxPolarAngle={[3.145/1.4]}/>
     <group ref={group} {...props} dispose={null} >

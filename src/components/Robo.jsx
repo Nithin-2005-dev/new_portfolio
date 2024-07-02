@@ -22,11 +22,10 @@ export default function Model(props) {
   },[animation])
   return (
     <group ref={group} {...props} dispose={null} scale={robo_scale} position={[0,-1,0]}>
-   {showMsg && <Html position={[0.06,0.3,0.1]} className="text-3xl text-zinc-100 robo-msg cursor-pointer"><FaMessage onClick={()=>{setMsg(!showMsg)
-   props.setInfo(!props.info);
+   {showMsg && <Html position={[0.07,0.3,0.1]} className="text-3xl text-zinc-100 robo-msg cursor-pointer"><FaMessage onClick={()=>{
+   props.message("info")
+    setMsg(!showMsg)
    }}/></Html>}
-   {props.info && <Html position={[0.06,0.2,0.1]}><div className='text-white font-extrabold font-mono'>Touch my skills to play with me</div>
-   </Html>}
       <group name="Sketchfab_Scene">
         <primitive object={nodes.GLTF_created_0_rootJoint} />
         <skinnedMesh

@@ -24,6 +24,7 @@
     "react-loader-spinner": "^6.1.6",
     "react-router": "^6.24.0",
     "react-router-dom": "^6.24.0",
+    "react-toastify": "^10.0.5",
     "three": "^0.165.0"
   },
   "devDependencies": {

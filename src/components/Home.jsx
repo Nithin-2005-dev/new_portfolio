@@ -1,8 +1,9 @@
-import React, { Suspense } from 'react'
+import React, { Suspense, useContext } from 'react'
 import SkullModel from './SkullModel'
 import Card from './Card'
 import {AnimatePresence, motion} from 'framer-motion'
 import Loader from './Loader'
+import { ToastContainer } from 'react-toastify'
 const Home = () => {
   return (
     <section>
