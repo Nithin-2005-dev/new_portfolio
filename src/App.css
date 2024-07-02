@@ -36,11 +36,24 @@ body{
     color: #19253f;
     padding: 0.5rem;
   }
-
+@media (max-width:700px){
+  .shadow-skill{
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 20%;
+  }
+}
+@media (max-width:300px){
+  .shadow-skill{
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 20%;
+  }
+}
 .playwrite-au-sa-p {
   font-family: "Playwrite AU SA", cursive;
   font-optical-sizing :auto;
-  font-weight :100;
+  font-weight :400;
   font-style:normal;
 }
 ::-webkit-scrollbar{
@@ -103,4 +116,15 @@ body{
   to{
     box-shadow: 1rem 1rem 5rem 3rem red;
   }
+}
+.robo-msg{
+  animation: move 1s ease-in-out 1s infinite;
+}
+@keyframes move {
+  from{
+    scale: 0.8;
+  }to{
+    scale:1.5
+  }
+  
 }

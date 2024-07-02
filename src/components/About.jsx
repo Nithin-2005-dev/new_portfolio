@@ -1,11 +1,30 @@
 import { Environment, Html } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
-import React, { Suspense } from 'react'
+import React, { Suspense, useContext, useState } from 'react'
 import Computer from './Computer'
 import AboutCard from './AboutCard'
+import Robo from './Robo'
 import {AnimatePresence, motion} from 'framer-motion'
 import Loader from './Loader'
+import { AnimationStore } from '../Store/AnimationStore'
+import { AiOutlineJavaScript } from "react-icons/ai";
+import { SiThreedotjs } from "react-icons/si";
+import { TbCircleLetterC } from "react-icons/tb";
+import { SiAdobephotoshop } from "react-icons/si";
+import { RiBootstrapLine } from "react-icons/ri";
+import { RiTailwindCssFill } from "react-icons/ri";
+import { IoLogoFirebase } from "react-icons/io5";
+import { FaReact } from "react-icons/fa";
+import { FaJava } from "react-icons/fa";
+import { MdHtml } from "react-icons/md";
+import { MdCss } from "react-icons/md";
+import { SiFramer } from "react-icons/si";
+import { FaGitAlt } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import { info } from 'autoprefixer'
 const About = () => {
+  const [info,setInfo]=useState(false);
+  const {animationChanger}=useContext(AnimationStore)
   const data=[{id:1,head:"Innovator at heart",body:"As an innovator at heart, I am constantly exploring new ideas and pushing boundaries. My passion for creativity drives me to develop unique solutions and transform concepts into reality. I thrive on challenges and believe in the power of innovation to make a meaningful impact"},
   {id:2,head:"Creative problem solver",body:"Creative problem solver with a knack for thinking outside the box. I approach challenges with a blend of creativity and analytical thinking, crafting innovative solutions that address complex issues. My goal is to find effective and imaginative ways to overcome obstacles and achieve success."},
   {id:3,head:"Designs with purpose",body:"Designs with purpose, focusing on creating meaningful and impactful experiences. Every project I undertake is driven by a clear vision and a commitment to delivering value. I believe in the power of purposeful design to inspire, engage, and make a difference."},
@@ -27,6 +46,7 @@ const About = () => {
 ]
   return (
     <>
+
     <AnimatePresence>
     <motion.div className='flex flex-col' initial={{opacity:0,y:window.innerHeight}}
     animate={{opacity:1,y:0,
@@ -53,11 +73,63 @@ const About = () => {
       once:false
     }}
     >
-    <Canvas style={{height:"80vh"}}>
-      <Computer scale={window.screen.width<900?window.screen.width/1000:window.screen.width/2000} position={[0,-1,1]} rotation={[0,-0.2,0]}></Computer>
+    </motion.div>
+    <div className='flex flex-wrap'>
+    <Canvas style={{height:"100vh",width:"50vw"}}>
+     <Robo info={info} setInfo={setInfo}/>
       <Environment preset='city'/>
     </Canvas>
-    </motion.div>
+    <div className="flex flex-wrap justify-center text-white text-6xl rounded-lg content-center"  style={{height:"100vh",width:"40vw"}}>
+      <div className="self-center text-center font-bold [text-shadow:_0rem_0.1rem_0.5rem_rgb(255_244_255_/_100%)] cursor-pointer w-full">skills</div>
+      <MdHtml className={`shadow-skill m-2 hover:scale-110 cursor-grab`} onClick={()=>{animationChanger(2)
+      setInfo(false)
+    }
+      }/>
+      <MdCss className={`shadow-skill m-2 hover:scale-110 cursor-grab`} onClick={()=>{animationChanger(5)
+      setInfo(false)
+    }
+      }/>
+      <AiOutlineJavaScript className={`shadow-skill m-2 hover:scale-110 cursor-grab`} onClick={()=>{animationChanger(6)
+      setInfo(false)
+    }
+      }/>
+      <FaJava className={`shadow-skill m-2 hover:scale-110 cursor-grab`} onClick={()=>{animationChanger(7)
+      setInfo(false)
+    }
+      } />
+      <FaReact className={`shadow-skill m-2 hover:scale-110 cursor-grab`} onClick={()=>{animationChanger(8)
+      setInfo(false)
+    }
+      } />
+      <IoLogoFirebase className={`shadow-skill m-2 hover:scale-110 cursor-grab`} onClick={()=>{animationChanger(11)
+      setInfo(false)
+      }}/>
+      <RiTailwindCssFill className={`shadow-skill m-2 hover:scale-110 cursor-grab`} onClick={()=>{animationChanger(13)
+      setInfo(false)
+      }}/>
+      <RiBootstrapLine className={`shadow-skill m-2 hover:scale-110 cursor-grab`} onClick={()=>{animationChanger(14)
+      setInfo(false)
+      }}/>
+      <SiAdobephotoshop className={`shadow-skill m-2 hover:scale-110 cursor-grab`} onClick={()=>{animationChanger(20)
+      setInfo(false)
+      }}/>
+      <TbCircleLetterC className={`shadow-skill m-2 hover:scale-110 cursor-grab`} onClick={()=>{animationChanger(23)
+      setInfo(false)
+      }}/>
+      <SiThreedotjs className={`shadow-skill m-2 hover:scale-110 cursor-grab`} onClick={()=>{animationChanger(24)
+      setInfo(false)
+      }}/>
+      <SiFramer className={`shadow-skill m-2 hover:scale-110 cursor-grab`} onClick={()=>{animationChanger(25)
+      setInfo(false)
+      }}/>
+      <FaGithub className={`shadow-skill m-2 hover:scale-110 cursor-grab`} onClick={()=>{animationChanger(26)
+      setInfo(false)
+      }}/>
+      <FaGitAlt className={`shadow-skill m-2 hover:scale-110 cursor-grab`} onClick={()=>{animationChanger(27)
+      setInfo(false)
+      }}/>
+      </div>
+      </div>
     </Suspense>
     </AnimatePresence>
    </>
