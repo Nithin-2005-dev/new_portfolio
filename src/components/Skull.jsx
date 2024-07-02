@@ -6,11 +6,14 @@ Source: https://sketchfab.com/3d-models/hoefnagel-creature-9a92596a121f412299dfb
 Title: Hoefnagel creature
 */
 
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { Html, OrbitControls, useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber';
 
 export default function Model(props) {
+  useEffect(()=>{
+    console.log(window.screen.width)
+  },[window.innerWidth])
   const width=window.innerWidth
   let arr=width>1000?[0,-2,0]:[0,0,0]
   let arr1=width<700?[-2,-0.5,0.5]:[0.2,0.3,1]
@@ -46,7 +49,7 @@ export default function Model(props) {
     <Html className='text-red-600 text-8xl font-extrabold stylish-regular ' position={arr1}>Creative</Html>
     <Html className='text-white text-7xl font-extrabold stylish-regular -z-50' position={arr2}>Portfolio</Html>
     </group>
-    <group {...props} dispose={null} ref={group} position={arr} scale={width<700?width/100:width/150}>
+    <group {...props} dispose={null} ref={group} position={arr} scale={width<700?width/120:width/180}>
       <mesh
         castShadow
         receiveShadow
