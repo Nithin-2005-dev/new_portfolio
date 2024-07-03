@@ -18,15 +18,16 @@ const message=(str)=>{
     transition: Bounce,
     })}
     else if(str==="welcome"){
-      
+
     }
   };
 const Provider=({children})=>{
+const [touch,setTouch]=useState(false);
   const [animation,setAnimation]=useState(21);
     const animationChanger=(getAni)=>{
         setAnimation(getAni)
     }
-    return <AnimationStore.Provider value={{animation,animationChanger,message}}>
+    return <AnimationStore.Provider value={{animation,animationChanger,message,touch,setTouch}}>
         {children}
     </AnimationStore.Provider>
 }

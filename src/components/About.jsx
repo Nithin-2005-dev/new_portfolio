@@ -122,7 +122,7 @@ const About = () => {
       <SiFramer className={`shadow-skill m-2 hover:scale-110 cursor-grab`} onClick={()=>{animationChanger(25)
       setInfo(false)
       }}/>
-      <FaGithub className={`shadow-skill m-2 hover:scale-110 cursor-grab`} onClick={()=>{animationChanger(26)
+      <FaGithub className={`shadow-skill m-2 hover:scale-110 cursor-grab`} onClick={()=>{animationChanger(16)
       setInfo(false)
       }}/>
       <FaGitAlt className={`shadow-skill m-2 hover:scale-110 cursor-grab`} onClick={()=>{animationChanger(27)

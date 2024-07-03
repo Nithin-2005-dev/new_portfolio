@@ -4,7 +4,7 @@ import { quantum } from 'ldrs'
 quantum.register()
 const Loader = () => {
   return (
-    <div className='w-screen h-full flex flex-col justify-center content-center items-center '>
+    <div className='w-screen h-full flex flex-col justify-center content-center items-center cursor-wait '>
     <div className='m-10'>
     {/* <Watch
   visible={true}

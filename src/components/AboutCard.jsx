@@ -8,7 +8,7 @@ const AboutCard = ({direction,head,body}) => {
     className={`bg-opacity-10 bg-slate-600 flex flex-wrap m-5 mx-10 justify-center content-center rounded-2xl shadow-2xl shadow-slate-500 ${isOpen?'w-1/2':'w-1/3'} ${direction%2==0?'self-end':'self-start'}`}
         initial={{x:direction%2==0?-window.innerWidth:window.innerWidth,
         opacity:0,scale:0.5}}
-        whileInView={{opacity:1,scale:1,transition:{duration:2}}}
+        whileInView={{opacity:1,scale:1,transition:{duration:1}}}
         viewport={{
             amount:0.1,
         }}
@@ -34,7 +34,7 @@ const AboutCard = ({direction,head,body}) => {
             scale:1.08,
             // boxShadow:"0rem 0rem 5rem red",
             transition:{
-                duration:10,
+                duration:1,
             }
         }}
     >

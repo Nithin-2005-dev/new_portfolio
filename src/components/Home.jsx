@@ -5,7 +5,7 @@ import {AnimatePresence, motion} from 'framer-motion'
 import Loader from './Loader'
 import { ToastContainer } from 'react-toastify'
 const Home = () => {
-  return (
+  return (<>
     <section>
      <motion.div className="flex flex-wrap"
      initial={{opacity:0,y:window.innerHeight,
@@ -25,6 +25,7 @@ const Home = () => {
     </Suspense>
       </motion.div> 
     </section>
+    </>
   )
 }
 

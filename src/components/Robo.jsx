@@ -10,15 +10,14 @@ import React, { useContext, useEffect, useRef, useState } from 'react'
 import { useGLTF, useAnimations, Html } from '@react-three/drei'
 import { AnimationStore } from '../Store/AnimationStore'
 export default function Model(props) {
-    let robo_scale=window.screen.width<700?7:12
+    let robo_scale=window.screen.width<900?7:12
     const [showMsg,setMsg]=useState(true);
     const {animation}=useContext(AnimationStore)
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('/robo.glb')
   const { actions,names } = useAnimations(animations, group)
   useEffect(()=>{
-  actions[names[animation]].reset().fadeOut(10).play();
-  console.log(animation)
+    actions[names[animation]].fadeOut(5).play();
   },[animation])
   return (
     <group ref={group} {...props} dispose={null} scale={robo_scale} position={[0,-1,0]}>
