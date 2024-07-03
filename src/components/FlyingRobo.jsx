@@ -24,7 +24,7 @@ if(window.innerWidth<420){
     else actions[names[0]].stop();
   },[touch])
   return (
-    <group ref={group} {...props} dispose={null} scale={roboScale}>
+    <group ref={group} {...props} dispose={null} scale={roboScale} position={[0,1,0]}>
       <group name="Sketchfab_Scene">
         <group
           name="_rootJoint"

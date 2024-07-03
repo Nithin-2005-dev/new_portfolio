@@ -5,10 +5,22 @@ import FlyingRobo from './FlyingRobo'
 import { Environment } from '@react-three/drei';
 import { AnimationStore } from '../Store/AnimationStore';
 import Loader from './Loader';
+import { motion,AnimatePresence } from 'framer-motion';
 const Contact = () => {
   const {setTouch}=useContext(AnimationStore)
   return (
-    <>
+    <AnimatePresence>
+    <motion.div initial={{opacity:0}}
+    animate={{
+      opacity:1,
+      transition:{
+        duration:2,
+      }
+    }}
+    exit={{
+      opacity:0
+    }}
+    >
     <h2 className='text-center font-bold text-3xl font-mono text-neutral-50 my-3'>Connect with me</h2>
     <div className='flex flex-row'
     >
@@ -37,14 +49,33 @@ const Contact = () => {
       </select>
       <button className='self-start m-3 bg-indigo-400 p-3 rounded-2xl'>Connect<FaConnectdevelop className='inline-block text-teal-950 text-2xl'/></button>
     </div>
-    <Suspense fallback={<Loader/>}>
+    <motion.div
+    initial={{
+      y:-window.innerHeight
+    }}
+    animate={{
+        y:0,
+      transition:{
+        type:"spring",
+        stiffness:4,
+        damping:2
+      }
+    }}
+    exit={{
+      y:window.innerHeight
+    }}
+    >
+    <Suspense fallback={<Loader/>} 
+    >
     <Canvas style={{height:"100vh"}}>
       <FlyingRobo/>
       <Environment preset='studio'/>
     </Canvas>
     </Suspense>
+    </motion.div>
     </div>
-    </>
+    </motion.div>
+    </AnimatePresence>
   )
 }
 
