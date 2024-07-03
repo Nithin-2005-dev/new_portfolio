@@ -13,7 +13,7 @@ import { AnimationStore } from '../Store/AnimationStore'
 export default function Model(props) {
 let roboScale=window.innerWidth<800?3:5.5
 if(window.innerWidth<420){
-    roboScale=0.2;
+    roboScale=1.5;
 }
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('/flingRobo.glb')
