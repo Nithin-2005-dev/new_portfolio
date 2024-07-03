@@ -1,6 +1,9 @@
 body{
     background-color: #0f172a;
 }
+*{
+  margin:0;padding: 0;box-sizing: border-box;
+}
 .playwrite-de-grund-hi {
   font-family: "Playwrite DE Grund", cursive;
   font-optical-sizing: auto;
