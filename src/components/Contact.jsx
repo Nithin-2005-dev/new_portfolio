@@ -8,6 +8,8 @@ import Loader from './Loader';
 const Contact = () => {
   const {setTouch}=useContext(AnimationStore)
   return (
+    <>
+    <h2 className='text-center font-bold text-3xl font-mono text-neutral-50 my-3'>Connect with me</h2>
     <div className='flex flex-row'
     >
     <div className='text-neutral-300 flex flex-col h-screen w-1/2 m-5 font-serif'  onMouseOver={()=>{
@@ -17,7 +19,6 @@ const Contact = () => {
       setTouch(true)
     }} onTouchEnd={()=>setTouch(false)}
     >
-    <h2 className='text-center font-bold text-3xl font-mono text-neutral-50 my-3'>Connect with me</h2>
       <label htmlFor="name">Your name</label>
       <input type="text" placeholder='enter your name here' className='my-3 px-2 text-orange-950 text-xl p-2 bg-slate-200 shadow-md drop-shadow-xl shadow-slate-400'/>
       <label htmlFor="number">Phone Number</label>
@@ -43,6 +44,7 @@ const Contact = () => {
     </Canvas>
     </Suspense>
     </div>
+    </>
   )
 }
 
