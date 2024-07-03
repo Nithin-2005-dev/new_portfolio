@@ -45,7 +45,7 @@ const message=(str)=>{
         });
     }
   };
-const sendMail=(email,user,mobile)=>{
+const sendMail=(email,user,mobile,feedback,rating)=>{
   if(email=="" || user=="" || mobile==""){
     message("enter")
     return
@@ -54,16 +54,8 @@ const sendMail=(email,user,mobile)=>{
     user,email
   })
   emailjs.send('service_cdui48n','template_ce8kq7c',{
-    user,email,phone:mobile
+    user,email,phone:mobile,feedback,rating
   })
-  .then(
-    () => {
-      console.log('SUCCESS!');
-    },
-    (error) => {
-      console.log('FAILED...', error);
-    },
-  );
   message("connect")
 }
 }

@@ -32,7 +32,7 @@ const Contact = () => {
     ><div><h2 className='text-center font-bold text-3xl font-mono text-neutral-50 my-3'>Connect with me</h2></div>
     <div className='flex flex-row'
     >
-    <div className={`text-neutral-300 flex flex-col h-screen w-1/2 m-5 font-serif`}  onMouseOver={()=>{
+    <div className={`text-neutral-300 flex flex-col h-screen w-1/2 py-4 font-serif px-3`}  onMouseOver={()=>{
       setTouch(true)
     }} onMouseOut={()=>setTouch(false)}
     onTouchStart={()=>{
@@ -40,22 +40,22 @@ const Contact = () => {
     }} onTouchEnd={()=>setTouch(false)}
     >
       <label htmlFor="name">Your name</label>
-      <input type="text" placeholder='enter your name here' className='my-3 px-2 text-orange-950 text-xl p-2 bg-slate-200 shadow-md drop-shadow-xl shadow-slate-400' ref={userRef} name='user'/>
+      <input type="text" placeholder='enter your name here' className='my-3 px-2 text-orange-950 text-xl p-2 bg-slate-200 shadow-md drop-shadow-xl shadow-slate-400 rounded-lg' ref={userRef} name='user'/>
       <label htmlFor="number">Phone Number</label>
-      <input type="tel" placeholder='enter your number here'  className='my-3 px-2 text-orange-950 text-xl p-2 bg-slate-200 shadow-md drop-shadow-xl shadow-slate-400' ref={mobileRef}/>
+      <input type="tel" placeholder='enter your number here'  className='my-3 px-2 text-orange-950 text-xl p-2 bg-slate-200 shadow-md drop-shadow-xl shadow-slate-400 rounded-lg' ref={mobileRef}/>
       <label htmlFor="mail">E-mail</label>
-      <input type="email" name="email" placeholder='enter your email here'  className='my-3 px-2 text-orange-950 text-xl p-2 bg-slate-200 shadow-md drop-shadow-xl shadow-slate-400' ref={emailRef}/>
+      <input type="email" name="email" placeholder='enter your email here'  className='my-3 px-2 text-orange-950 text-xl p-2 bg-slate-200 shadow-md drop-shadow-xl shadow-slate-400 rounded-lg' ref={emailRef}/>
       <label htmlFor="feedback">Feedback</label>
-      <textarea type="text" placeholder='enter your feedback'  className='my-3 px-2 text-orange-950 text-xl p-2 bg-slate-200 shadow-md drop-shadow-xl shadow-slate-400' ref={feedbackRef}/>
+      <textarea type="text" placeholder='enter your feedback'  className='my-3 px-2 text-orange-950 text-xl p-2 bg-slate-200 shadow-md drop-shadow-xl shadow-slate-400 rounded-lg' ref={feedbackRef}/>
       <label htmlFor="feedback">Rating</label>
-      <select name="rate"  className='my-3 px-2 text-orange-950 text-xl p-2 bg-slate-200 shadow-md drop-shadow-xl shadow-slate-400 ' ref={ratingRef}>
+      <select name="rate"  className='my-3 px-2 text-orange-950 text-xl p-2 bg-slate-200 shadow-md drop-shadow-xl shadow-slate-400 rounded-lg ' ref={ratingRef}>
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
         <option value="4">4</option>
         <option value="5">5</option>
       </select>
-      <button className='self-start m-3 bg-indigo-400 p-3 rounded-2xl' onClick={()=>{sendMail(emailRef.current.value,userRef.current.value,mobileRef.current.value)
+      <button className='self-start m-3 bg-indigo-400 p-3 rounded-2xl' onClick={()=>{sendMail(emailRef.current.value,userRef.current.value,mobileRef.current.value,feedbackRef.current.value,ratingRef.current.value)
       userRef.current.value=""
       emailRef.current.value=""
       mobileRef.current.value=""
@@ -88,7 +88,7 @@ const Contact = () => {
     </Canvas>
     </Suspense>
     </div>
-    <div className='flex flex-col fixed top-10 right-0.5'>
+    <div className={'flex flex-col fixed top-10 right-0.5'}>
     <a href='https://www.instagram.com/nithin__kumar2/' target='_blank'>
     <FaInstagram className='shadow-skill m-3 text-3xl ' style={{height:"2.5rem",width:"2.5rem"}}/>
     </a>
