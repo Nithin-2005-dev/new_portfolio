@@ -2,7 +2,7 @@ import { Canvas } from '@react-three/fiber';
 import React, { Suspense, useContext } from 'react'
 import { FaConnectdevelop } from "react-icons/fa";
 import FlyingRobo from './FlyingRobo'
-import { Environment } from '@react-three/drei';
+import { Environment, Html } from '@react-three/drei';
 import { AnimationStore } from '../Store/AnimationStore';
 import Loader from './Loader';
 import { motion,AnimatePresence } from 'framer-motion';
@@ -24,7 +24,7 @@ const Contact = () => {
     ><div><h2 className='text-center font-bold text-3xl font-mono text-neutral-50 my-3'>Connect with me</h2></div>
     <div className='flex flex-row'
     >
-    <div className={`text-neutral-300 flex flex-col h-screen ${window.innerWidth<450?'w-1/3':'w-1/2'} m-5 font-serif`}  onMouseOver={()=>{
+    <div className={`text-neutral-300 flex flex-col h-screen w-1/2 m-5 font-serif`}  onMouseOver={()=>{
       setTouch(true)
     }} onMouseOut={()=>setTouch(false)}
     onTouchStart={()=>{
@@ -49,7 +49,7 @@ const Contact = () => {
       </select>
       <button className='self-start m-3 bg-indigo-400 p-3 rounded-2xl'>Connect<FaConnectdevelop className='inline-block text-teal-950 text-2xl'/></button>
     </div>
-    <motion.div className={`${window.innerWidth<450?'w-2/3':'w-1/2'}`}
+    <motion.div className={`w-1/2`}
     initial={{
       y:-window.innerHeight
     }}
@@ -65,6 +65,7 @@ const Contact = () => {
       y:window.innerHeight
     }}
     >
+    <div className='flex flex-wrap'>
     <Suspense fallback={<Loader/>} 
     >
     <Canvas style={{height:"100vh"}}>
@@ -72,6 +73,7 @@ const Contact = () => {
       <Environment preset='studio'/>
     </Canvas>
     </Suspense>
+    </div>
     </motion.div>
     </div>
     </motion.div>
