@@ -10,7 +10,8 @@ const Contact = () => {
   const {setTouch}=useContext(AnimationStore)
   return (
     <AnimatePresence>
-    <motion.div initial={{opacity:0}}
+    <motion.div className='flex flex-col'
+     initial={{opacity:0}}
     animate={{
       opacity:1,
       transition:{
@@ -20,11 +21,10 @@ const Contact = () => {
     exit={{
       opacity:0
     }}
-    >
-    <h2 className='text-center font-bold text-3xl font-mono text-neutral-50 my-3'>Connect with me</h2>
+    ><div><h2 className='text-center font-bold text-3xl font-mono text-neutral-50 my-3'>Connect with me</h2></div>
     <div className='flex flex-row'
     >
-    <div className='text-neutral-300 flex flex-col h-screen w-1/2 m-5 font-serif'  onMouseOver={()=>{
+    <div className={`text-neutral-300 flex flex-col h-screen ${window.innerWidth<450?'w-1/3':'w-1/2'} m-5 font-serif`}  onMouseOver={()=>{
       setTouch(true)
     }} onMouseOut={()=>setTouch(false)}
     onTouchStart={()=>{
@@ -49,7 +49,7 @@ const Contact = () => {
       </select>
       <button className='self-start m-3 bg-indigo-400 p-3 rounded-2xl'>Connect<FaConnectdevelop className='inline-block text-teal-950 text-2xl'/></button>
     </div>
-    <motion.div
+    <motion.div className={`${window.innerWidth<450?'w-2/3':'w-1/2'}`}
     initial={{
       y:-window.innerHeight
     }}
