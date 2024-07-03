@@ -20,7 +20,7 @@ const message=(str)=>{
     transition: Bounce,
     })}
     else if(str==="connect"){
-      toast.success('connexction added sucessfully!!!', {
+      toast.success('connection added sucessfully!!!', {
         position: "bottom-right",
         autoClose: 5000,
         hideProgressBar: false,
