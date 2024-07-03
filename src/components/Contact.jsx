@@ -5,6 +5,7 @@ import FlyingRobo from './FlyingRobo'
 import { Environment, Html } from '@react-three/drei';
 import { AnimationStore } from '../Store/AnimationStore';
 import Loader from './Loader';
+import { Bounce, ToastContainer, toast } from "react-toastify";
 import { motion,AnimatePresence } from 'framer-motion';
 import { FaInstagram ,FaFacebook,FaLinkedin,FaGithub} from "react-icons/fa";
 import { Link } from 'react-router-dom';
@@ -54,7 +55,7 @@ const Contact = () => {
         <option value="4">4</option>
         <option value="5">5</option>
       </select>
-      <button className='self-start m-3 bg-indigo-400 p-3 rounded-2xl' onClick={()=>{sendMail(emailRef.current.value,userRef.current.value)
+      <button className='self-start m-3 bg-indigo-400 p-3 rounded-2xl' onClick={()=>{sendMail(emailRef.current.value,userRef.current.value,mobileRef.current.value)
       userRef.current.value=""
       emailRef.current.value=""
       mobileRef.current.value=""
@@ -104,6 +105,7 @@ const Contact = () => {
     </motion.div>
     </div>
     </motion.div>
+    <ToastContainer/>
     </AnimatePresence>
   )
 }

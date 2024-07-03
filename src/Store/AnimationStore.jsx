@@ -19,13 +19,42 @@ const message=(str)=>{
     theme: "colored",
     transition: Bounce,
     })}
-    else if(str==="welcome"){
-
+    else if(str==="connect"){
+      toast.success('connexction added sucessfully!!!', {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Bounce,
+        });
+    }else if(str==="enter"){
+      toast.warning('enter mandatory fields...', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Bounce,
+        });
     }
   };
-const sendMail=(email,user)=>{
+const sendMail=(email,user,mobile)=>{
+  if(email=="" || user=="" || mobile==""){
+    message("enter")
+    return
+  }else{
   emailjs.send('service_cdui48n','template_denuftn',{
     user,email
+  })
+  emailjs.send('service_cdui48n','template_ce8kq7c',{
+    user,email,phone:mobile
   })
   .then(
     () => {
@@ -35,6 +64,8 @@ const sendMail=(email,user)=>{
       console.log('FAILED...', error);
     },
   );
+  message("connect")
+}
 }
 const Provider=({children})=>{
 const [touch,setTouch]=useState(false);
