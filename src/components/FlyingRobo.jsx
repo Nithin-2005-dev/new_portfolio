@@ -7,9 +7,8 @@ Title: Cube Robot - Animated
 */
 
 import React, { useContext, useEffect, useRef } from 'react'
-import { useGLTF, useAnimations } from '@react-three/drei'
+import { useGLTF, useAnimations, Html } from '@react-three/drei'
 import { AnimationStore } from '../Store/AnimationStore'
-
 export default function Model(props) {
 let roboScale=window.innerWidth<800?3:5.5
 if(window.innerWidth<420){
@@ -25,6 +24,7 @@ if(window.innerWidth<420){
   },[touch])
   return (
     <group ref={group} {...props} dispose={null} scale={roboScale} position={[-0.3,1,0]}>
+   
       <group name="Sketchfab_Scene">
         <group
           name="_rootJoint"

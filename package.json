@@ -13,6 +13,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.3.3",
     "@react-three/drei": "^9.107.2",
     "@react-three/fiber": "^8.16.8",
     "firebase": "^10.12.2",

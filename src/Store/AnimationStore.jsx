@@ -1,6 +1,8 @@
-import { createContext, useState } from "react";
+import { createContext, useRef, useState } from "react";
 import { Bounce, toast } from "react-toastify";
-
+import emailjs from '@emailjs/browser'
+import { Form } from "react-router-dom";
+emailjs.init('z-mZlwkT3QPg9Ht6o')
 const AnimationStore=createContext({
 
 })
@@ -21,13 +23,26 @@ const message=(str)=>{
 
     }
   };
+const sendMail=(email,user)=>{
+  emailjs.send('service_cdui48n','template_denuftn',{
+    user,email
+  })
+  .then(
+    () => {
+      console.log('SUCCESS!');
+    },
+    (error) => {
+      console.log('FAILED...', error);
+    },
+  );
+}
 const Provider=({children})=>{
 const [touch,setTouch]=useState(false);
   const [animation,setAnimation]=useState(21);
     const animationChanger=(getAni)=>{
         setAnimation(getAni)
     }
-    return <AnimationStore.Provider value={{animation,animationChanger,message,touch,setTouch}}>
+    return <AnimationStore.Provider value={{animation,animationChanger,message,touch,setTouch,sendMail}}>
         {children}
     </AnimationStore.Provider>
 }

@@ -1,13 +1,20 @@
 import { Canvas } from '@react-three/fiber';
-import React, { Suspense, useContext } from 'react'
+import React, { Suspense, useContext, useRef } from 'react'
 import { FaConnectdevelop } from "react-icons/fa";
 import FlyingRobo from './FlyingRobo'
 import { Environment, Html } from '@react-three/drei';
 import { AnimationStore } from '../Store/AnimationStore';
 import Loader from './Loader';
 import { motion,AnimatePresence } from 'framer-motion';
+import { FaInstagram ,FaFacebook,FaLinkedin,FaGithub} from "react-icons/fa";
+import { Link } from 'react-router-dom';
 const Contact = () => {
-  const {setTouch}=useContext(AnimationStore)
+  let userRef=useRef();
+  let mobileRef=useRef();
+  let emailRef=useRef();
+  let feedbackRef=useRef();
+  let ratingRef=useRef(); 
+  const {setTouch,sendMail}=useContext(AnimationStore)
   return (
     <AnimatePresence>
     <motion.div className='flex flex-col'
@@ -32,22 +39,28 @@ const Contact = () => {
     }} onTouchEnd={()=>setTouch(false)}
     >
       <label htmlFor="name">Your name</label>
-      <input type="text" placeholder='enter your name here' className='my-3 px-2 text-orange-950 text-xl p-2 bg-slate-200 shadow-md drop-shadow-xl shadow-slate-400'/>
+      <input type="text" placeholder='enter your name here' className='my-3 px-2 text-orange-950 text-xl p-2 bg-slate-200 shadow-md drop-shadow-xl shadow-slate-400' ref={userRef} name='user'/>
       <label htmlFor="number">Phone Number</label>
-      <input type="tel" placeholder='enter your number here'  className='my-3 px-2 text-orange-950 text-xl p-2 bg-slate-200 shadow-md drop-shadow-xl shadow-slate-400'/>
+      <input type="tel" placeholder='enter your number here'  className='my-3 px-2 text-orange-950 text-xl p-2 bg-slate-200 shadow-md drop-shadow-xl shadow-slate-400' ref={mobileRef}/>
       <label htmlFor="mail">E-mail</label>
-      <input type="email" placeholder='enter your email here'  className='my-3 px-2 text-orange-950 text-xl p-2 bg-slate-200 shadow-md drop-shadow-xl shadow-slate-400'/>
+      <input type="email" name="email" placeholder='enter your email here'  className='my-3 px-2 text-orange-950 text-xl p-2 bg-slate-200 shadow-md drop-shadow-xl shadow-slate-400' ref={emailRef}/>
       <label htmlFor="feedback">Feedback</label>
-      <textarea type="text" placeholder='enter your feedback'  className='my-3 px-2 text-orange-950 text-xl p-2 bg-slate-200 shadow-md drop-shadow-xl shadow-slate-400'/>
+      <textarea type="text" placeholder='enter your feedback'  className='my-3 px-2 text-orange-950 text-xl p-2 bg-slate-200 shadow-md drop-shadow-xl shadow-slate-400' ref={feedbackRef}/>
       <label htmlFor="feedback">Rating</label>
-      <select name="rate"  className='my-3 px-2 text-orange-950 text-xl p-2 bg-slate-200 shadow-md drop-shadow-xl shadow-slate-400'>
+      <select name="rate"  className='my-3 px-2 text-orange-950 text-xl p-2 bg-slate-200 shadow-md drop-shadow-xl shadow-slate-400 ' ref={ratingRef}>
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
         <option value="4">4</option>
         <option value="5">5</option>
       </select>
-      <button className='self-start m-3 bg-indigo-400 p-3 rounded-2xl'>Connect<FaConnectdevelop className='inline-block text-teal-950 text-2xl'/></button>
+      <button className='self-start m-3 bg-indigo-400 p-3 rounded-2xl' onClick={()=>{sendMail(emailRef.current.value,userRef.current.value)
+      userRef.current.value=""
+      emailRef.current.value=""
+      mobileRef.current.value=""
+      feedbackRef.current.value=""
+      ratingRef.current.value=""
+      }}>Connect<FaConnectdevelop className='inline-block text-teal-950 text-2xl'/></button>
     </div>
     <motion.div className={`w-1/2`}
     initial={{
@@ -74,6 +87,20 @@ const Contact = () => {
     </Canvas>
     </Suspense>
     </div>
+    <div className='flex flex-col fixed top-10 right-0.5'>
+    <a href='https://www.instagram.com/nithin__kumar2/' target='_blank'>
+    <FaInstagram className='shadow-skill m-3 text-3xl ' style={{height:"2.5rem",width:"2.5rem"}}/>
+    </a>
+    <a href='https://www.facebook.com/profile.php?id=100062150913192' target='_blank'>
+    <FaFacebook className='shadow-skill m-3 text-3xl ' style={{height:"2.5rem",width:"2.5rem"}} />
+    </a>
+    <a href='https://www.linkedin.com/in/nithin-kumar-a922b82a3/' target='_blank'>
+    <FaLinkedin className='shadow-skill m-3 text-3xl ' style={{height:"2.5rem",width:"2.5rem"}}/>
+    </a>
+    <a href='https://github.com/Nithin-2005-dev' target='_blank'>
+    <FaGithub className='shadow-skill m-3 text-3xl ' style={{height:"2.5rem",width:"2.5rem"}}/>
+    </a>
+      </div>
     </motion.div>
     </div>
     </motion.div>
