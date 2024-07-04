@@ -45,7 +45,7 @@ const Contact = () => {
       }
     }}
     exit={{
-      y:window.innerHeight
+      y:window.innerHeight,
     }}
     >
     <div className='flex flex-wrap'>

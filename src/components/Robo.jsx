@@ -10,7 +10,7 @@ import React, { useContext, useEffect, useRef, useState } from 'react'
 import { useGLTF, useAnimations, Html } from '@react-three/drei'
 import { AnimationStore } from '../Store/AnimationStore'
 export default function Model(props) {
-    let robo_scale=window.innerWidth<900?8:12
+    let robo_scale=window.innerWidth<700?8:12
     const [showMsg,setMsg]=useState(true);
     const {animation}=useContext(AnimationStore)
   const group = useRef()

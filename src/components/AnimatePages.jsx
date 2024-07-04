@@ -7,6 +7,7 @@ import { Route, Routes, useLocation} from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 import Loader from './Loader'
 import { Provider } from '../Store/AnimationStore'
+import ProtectedPage from './ProtectedPage'
 const AnimatePages = () => {
     const location=useLocation();
   return (
@@ -16,7 +17,7 @@ const AnimatePages = () => {
           <Route path='/' element={<Home></Home>}/>
           <Route path='/about' element={<About></About>}/>
           <Route path='/projects' element={<Projects/>}/>
-          <Route path='/contact' element={<Contact></Contact>}/>
+          <Route path='/contact' element={<ProtectedPage></ProtectedPage>}/>
         </Routes>
         </AnimatePresence>
     </Provider>

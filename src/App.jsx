@@ -1,5 +1,6 @@
-import React, { Suspense } from 'react'
+import React, { Suspense} from 'react'
 import Header from './components/Header'
+import {useContext} from "react";
 import {BrowserRouter as Router} from 'react-router-dom'
 import Loader from './components/Loader'
 import AnimatePages from './components/AnimatePages'

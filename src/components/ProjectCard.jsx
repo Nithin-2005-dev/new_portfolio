@@ -5,7 +5,7 @@ import { FaSchool } from "react-icons/fa";
 import { FaBlogger } from "react-icons/fa";
 const ProjectCard = ({project}) => {
   return (
-    <div className=''>
+    <div className='cursor-pointer'>
     <div className='flex justify-center flex-wrap'>
       {project.technologies.map((icon)=>{
         return <div className='text-3xl mx-3 text-rose-300 ' style={{ borderRadius:"50%"}}>{icon}</div>
