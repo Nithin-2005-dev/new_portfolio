@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {Canvas} from '@react-three/fiber'
 import { Environment } from '@react-three/drei'
 import DollModel from './DollModel'
@@ -100,7 +100,7 @@ const Projects = () => {
       icon={project.icon}
       iconStyle={{backgroundColor:"white",display:"flex",}}
        contentStyle={{ background:"#5c699e", color: '#FFF8DB',opacity:1,padding:"1rem",boxShadow:"0.5rem 0.5rem 1rem #7D8ABC" }}>
-    <ProjectCard project={project}/>
+    <ProjectCard project={project} key={project.title}/>
     </VerticalTimelineElement>
     })}
     </VerticalTimeline>

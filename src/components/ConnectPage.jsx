@@ -1,8 +1,10 @@
 import React, { useContext, useRef } from 'react'
 import { AnimationStore } from '../Store/AnimationStore';
 import { FaConnectdevelop } from "react-icons/fa";
+import BtnLoader from './BtnLoader';
 const ConnectPage = ({setConnected}) => {
-const {sendMail,setTouch,signUp}=useContext(AnimationStore)
+const {sendMail,setTouch,signUp,search}=useContext(AnimationStore)
+console.log(search)
   let userRef=useRef();
   let mobileRef=useRef();
   let emailRef=useRef();
@@ -53,7 +55,9 @@ const {sendMail,setTouch,signUp}=useContext(AnimationStore)
         messageRef.current.value=""
         passwordRef.current.value=""
         proffesionRef.current.value=""
-        }}>Connect<FaConnectdevelop className='inline-block text-teal-950 text-2xl'/></button>
+        }}>{!search?"Connect":<BtnLoader/>}
+          <FaConnectdevelop className={`inline-block text-teal-950 text-2xl`} style={{display:search?"none":"inline-block"}}/>
+        </button>
         <button className='self-start m-3 bg-indigo-400 py-4 px-3 rounded-2xl text-xs font-bold' onClick={()=>{
           setConnected(true)
         }}>Already Connected?</button>

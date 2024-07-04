@@ -71,49 +71,56 @@ const message=(str)=>{
       });
 };
 }
-  const signUp=(email,user,mobile,feedback,rating,password,msg)=>{
-    if(email=="" || user=="" || mobile=="" || feedback=="" || rating=="" || password==""){
-      message("enter")
-      return
-    }else{
-      let error=false
-    createUserWithEmailAndPassword(auth,email,password)
-    .then(res=>{
-      sendMail(email,user,mobile,feedback,rating,msg)
-      console.log(res)})
-    .catch(err=>{
-      if(err.message=="Firebase: Error (auth/email-already-in-use)."){
-      message("inUse")
-      return
-      }
-    })
-    }
-  }
-const sendMail=(email,user,mobile,feedback,rating,msg)=>{
-  {
-  emailjs.send('service_cdui48n','template_denuftn',{
-    user,email
-  })
-  emailjs.send('service_cdui48n','template_ce8kq7c',{
-    user,email,phone:mobile,feedback,rating
-  })
-  message("connect")
-}
-}
-const signIn=(email,password)=>{
-  signInWithEmailAndPassword(auth,email,password)
-  .then(details=>console.log(details))
-  .catch(err=>{
-    message("Firebase: Error (auth/invalid-credential)")
-  })
-}
 const Provider=({children})=>{
 const [touch,setTouch]=useState(true);
 const [animation,setAnimation]=useState(21);
+const [search,setSearch]=useState(false)
+const signUp=async(email,user,mobile,feedback,rating,password,msg)=>{
+  if(email=="" || user=="" || mobile=="" || feedback=="" || rating=="" || password==""){
+    message("enter")
+    return
+  }else{
+    setSearch(true)
+  await createUserWithEmailAndPassword(auth,email,password)
+  .then(res=>{
+    sendMail(email,user,mobile,feedback,rating,msg)
+    })
+  .catch(err=>{
+    if(err.message=="Firebase: Error (auth/email-already-in-use)."){
+    message("inUse")
+    return
+    }
+  })
+  setSearch(false)
+  }
+}
+const sendMail=(email,user,mobile,feedback,rating,msg)=>{
+{
+emailjs.send('service_cdui48n','template_denuftn',{
+  user,email
+})
+emailjs.send('service_cdui48n','template_ce8kq7c',{
+  user,email,phone:mobile,feedback,rating
+})
+message("connect")
+}
+}
+const signIn=async(email,password)=>{
+  if(email=="" || password==""){
+    message("enter");
+  }else{
+ setSearch(true)
+await signInWithEmailAndPassword(auth,email,password)
+.catch(err=>{
+  message("Firebase: Error (auth/invalid-credential)")
+})
+setSearch(false)
+  }
+}
 const animationChanger=(getAni)=>{
         setAnimation(getAni)
     }
-    return <AnimationStore.Provider value={{animation,animationChanger,message,touch,setTouch,sendMail,signUp,signIn}}>
+    return <AnimationStore.Provider value={{animation,animationChanger,message,touch,setTouch,sendMail,signUp,signIn,search}}>
         {children}
     </AnimationStore.Provider>
 }
