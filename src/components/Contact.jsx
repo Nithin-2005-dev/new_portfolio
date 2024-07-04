@@ -57,9 +57,9 @@ const Contact = () => {
     </Canvas>
     </Suspense>
     </div>
-    <motion.div layout className={`text-white absolute text-center cursor-grab connect font-bold ${connected?'top-3/4 right-0':'right-0'}`} onClick={()=>{setOpen(!open)}} style={{maxWidth:"50vw"}}>
+    <motion.div layout className={`text-white absolute text-center cursor-grab connect font-bold ${connected?'top-3/4 right-0':'right-0 z-50 opacity-100'} ${open?'top-1/2 left-1/4':''}`} onClick={()=>{setOpen(!open)}} style={{maxWidth:"50vw"}}>
     Why Connect with Me?
-    {open && <ul className='text-start text-sm' onClick={()=>{setOpen(!open)}}>
+    {open && <ul className='text-start text-md' onClick={()=>{setOpen(!open)}}>
       <li><span className='text-pink-400'>Collaborate on Innovative Projects</span>: Combine skills and ideas to create something remarkable.</li>
       <li><span className='text-pink-400'>Expand Your Network</span>: Connect with like-minded individuals and professionals.</li>
       <li><span className='text-pink-400'>Share Insights and Inspiration</span>: Learn from diverse perspectives and experiences.</li>
