@@ -2,6 +2,7 @@ import { createContext, useRef, useState } from "react";
 import { Bounce, toast } from "react-toastify";
 import emailjs from '@emailjs/browser'
 import { Form } from "react-router-dom";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 emailjs.init('z-mZlwkT3QPg9Ht6o')
 const AnimationStore=createContext({
 
@@ -56,6 +57,7 @@ const sendMail=(email,user,mobile,feedback,rating)=>{
   emailjs.send('service_cdui48n','template_ce8kq7c',{
     user,email,phone:mobile,feedback,rating
   })
+  createUserWithEmailAndPassword(auth,)
   message("connect")
 }
 }
