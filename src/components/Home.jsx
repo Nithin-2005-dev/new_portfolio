@@ -4,9 +4,11 @@ import Card from './Card'
 import {AnimatePresence, motion} from 'framer-motion'
 import Loader from './Loader'
 import { ToastContainer } from 'react-toastify'
+import Header from './Header'
 const Home = () => {
   return (<>
     <section>
+    <header><Header/></header>
      <motion.div className="flex flex-wrap"
      initial={{opacity:0,y:window.innerHeight,
      }}

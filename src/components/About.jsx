@@ -22,6 +22,7 @@ import { FaGitAlt } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import {Bounce, toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import Header from './Header'
 const About = () => {
   const {animationChanger,message}=useContext(AnimationStore)
   const data=[{id:1,head:"Innovator at heart",body:"As an innovator at heart, I am constantly exploring new ideas and pushing boundaries. My passion for creativity drives me to develop unique solutions and transform concepts into reality. I thrive on challenges and believe in the power of innovation to make a meaningful impact"},
@@ -45,6 +46,7 @@ const About = () => {
 ]
   return (
     <>
+    <header><Header/></header>
     <AnimatePresence>
     <motion.div className='flex flex-col' initial={{opacity:0,y:window.innerHeight}}
     animate={{opacity:1,y:0,

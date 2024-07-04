@@ -9,6 +9,7 @@ import { Bounce, ToastContainer, toast } from "react-toastify";
 import { motion,AnimatePresence } from 'framer-motion';
 import { FaInstagram ,FaFacebook,FaLinkedin,FaGithub} from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import Header from './Header';
 const Contact = () => {
   let userRef=useRef();
   let mobileRef=useRef();
@@ -17,6 +18,8 @@ const Contact = () => {
   let ratingRef=useRef(); 
   const {setTouch,sendMail}=useContext(AnimationStore)
   return (
+    <>
+    <header><Header/></header>
     <AnimatePresence>
     <motion.div className='flex flex-col'
      initial={{opacity:0}}
@@ -29,7 +32,7 @@ const Contact = () => {
     exit={{
       opacity:0
     }}
-    ><div><h2 className='text-center font-bold text-3xl font-mono text-neutral-50 my-3'>Connect with me</h2></div>
+    ><div><h2 className='text-center font-bold text-3xl font-mono text-neutral-50 m-3'>Connect with me</h2></div>
     <div className='flex flex-row'
     >
     <div className={`text-neutral-300 flex flex-col h-screen w-1/2 py-4 font-serif px-3`}  onMouseOver={()=>{
@@ -88,7 +91,7 @@ const Contact = () => {
     </Canvas>
     </Suspense>
     </div>
-    <div className={'flex flex-col fixed top-10 right-0.5'}>
+    <div className={'flex flex-col fixed top-12 right-0.5 z-30'}>
     <a href='https://www.instagram.com/nithin__kumar2/' target='_blank'>
     <FaInstagram className='shadow-skill m-3 text-3xl ' style={{height:"2.5rem",width:"2.5rem"}}/>
     </a>
@@ -107,6 +110,7 @@ const Contact = () => {
     </motion.div>
     <ToastContainer/>
     </AnimatePresence>
+    </>
   )
 }
 

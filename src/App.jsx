@@ -9,7 +9,6 @@ const App = () => {
     <main className='bg-slate-900'>
       <Router>
       <Suspense fallback={ <Loader/>||<h1>Loading...</h1>}>
-    <header><Header/></header>
       </Suspense>
       <AnimatePages/>
       </Router>

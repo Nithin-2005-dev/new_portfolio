@@ -22,6 +22,7 @@ import { MdCss } from "react-icons/md";
 import { SiFramer } from "react-icons/si";
 import { FaGitAlt } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
+import Header from './Header'
 const Projects = () => {
   const projectList=[{
     title:"campus-rentals",
@@ -54,6 +55,7 @@ const Projects = () => {
   }]
   return (
     <>
+    <header><Header/></header>
     <h3 className='text-white text-3xl items-center flex justify-center'>Projects & Deployments</h3>
     <VerticalTimeline>
     {projectList.map((project)=>{
