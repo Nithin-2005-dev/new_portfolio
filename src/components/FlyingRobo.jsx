@@ -6,10 +6,12 @@ Source: https://sketchfab.com/3d-models/cube-robot-animated-30a8e15725cf4feb9a3c
 Title: Cube Robot - Animated
 */
 
-import React, { useContext, useEffect, useRef } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import { useGLTF, useAnimations, Html } from '@react-three/drei'
 import { AnimationStore } from '../Store/AnimationStore'
+import { useFrame } from '@react-three/fiber'
 export default function Model(props) {
+  const {search}=useContext(AnimationStore)
 let roboScale=window.innerWidth<800?3:5.5
 if(window.innerWidth<420){
     roboScale=1.5;

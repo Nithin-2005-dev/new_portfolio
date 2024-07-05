@@ -5,6 +5,7 @@ import { FaSchool } from "react-icons/fa";
 import { FaBlogger } from "react-icons/fa";
 const ProjectCard = ({project}) => {
   return (
+    <section>
     <div className='cursor-pointer'>
     <div className='flex justify-center flex-wrap'>
       {project.technologies.map((icon)=>{
@@ -22,6 +23,7 @@ const ProjectCard = ({project}) => {
       </a>
       </div>
     </div>
+    </section>
   )
 }
 

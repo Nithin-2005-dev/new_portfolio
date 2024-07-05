@@ -18,7 +18,6 @@ const ProtectedPage = () => {
         }
     })
   })
-  console.log(isConnected)
   return (
     <>
     {/* <Contact/> */}

@@ -16,6 +16,7 @@ const Contact = () => {
   return (
     <>
     <header><Header/></header>
+    <section>
     <AnimatePresence>
     <motion.div className='flex flex-col'
      initial={{opacity:0}}
@@ -85,6 +86,7 @@ const Contact = () => {
     </motion.div>
     <ToastContainer/>
     </AnimatePresence>
+    </section>
     </>
   )
 }

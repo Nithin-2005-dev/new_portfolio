@@ -47,6 +47,7 @@ const About = () => {
   return (
     <>
     <header><Header/></header>
+    <section>
     <AnimatePresence>
     <motion.div className='flex flex-col' initial={{opacity:0,y:window.innerHeight}}
     animate={{opacity:1,y:0,
@@ -134,6 +135,7 @@ const About = () => {
       </div>
     </Suspense>
     </AnimatePresence>
+    </section>
    </>
   )
 }

@@ -6,7 +6,9 @@ const ConnectedUsers = () => {
   return (
     <>
     <Header></Header> 
+    <section>
     <ToastContainer/>
+    </section>
     </>
   )
 }
