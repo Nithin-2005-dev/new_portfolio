@@ -27,7 +27,7 @@ const {sendMail,setTouch,signUp,search}=useContext(AnimationStore)
         <label htmlFor="mail">E-mail</label>
         <input type="email" name="email" placeholder='enter your email here'  className='my-3 px-2 text-orange-950 text-sm p-2 bg-slate-200 shadow-md drop-shadow-xl shadow-slate-400 rounded-lg' ref={emailRef}/>
         <label htmlFor="password">Password</label>
-        <input type="password" name="email" placeholder='enter pssword here'  className='my-3 px-2 text-orange-950 text-sm p-2 bg-slate-200 shadow-md drop-shadow-xl shadow-slate-400 rounded-lg' ref={passwordRef}/>
+        <input type="password" name="password" placeholder='enter pssword here'  className='my-3 px-2 text-orange-950 text-sm p-2 bg-slate-200 shadow-md drop-shadow-xl shadow-slate-400 rounded-lg' ref={passwordRef}/>
         <label htmlFor="profession">Your Proffesion</label>
         <input type="text" name="email" placeholder='enter your proffesion here'  className='my-3 px-2 text-orange-950 text-sm p-2 bg-slate-200 shadow-md drop-shadow-xl shadow-slate-400 rounded-lg' ref={proffesionRef}/>
         <label htmlFor="message">Any message to me</label>

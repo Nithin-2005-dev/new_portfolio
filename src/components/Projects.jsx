@@ -52,11 +52,11 @@ const Projects = () => {
     source:"https://github.com/Nithin-2005-dev/EchoEntries.git",
     link:"https://echo-entries-mvp1.vercel.app/"
   },{
-    title:"text-utils",
+    title:"word smith",
     technologies:[<MdHtml/>,<MdCss/>,<AiOutlineJavaScript/>,<FaReact/>,<FaGithub/>,<RiBootstrapLine/>],
-    dec:"Text-Utils is a versatile tool for text manipulation. Easily convert text cases, count words, remove extra spaces, and perform various other text operations with just a few clicks.",
-    source:"https://github.com/Nithin-2005-dev/text_utiles.git",
-    link:"https://text-utils324.netlify.app/",
+    dec:"word-smith is a versatile tool for text manipulation. Easily convert text cases, count words, remove extra spaces, and perform various other text operations with just a few clicks.",
+    source:"https://github.com/Nithin-2005-dev/word-smith.git",
+    link:"https://word-smith09.netlify.app/",
     icon:<CiText />
   },{
     title:"old portfolio",

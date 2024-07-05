@@ -75,7 +75,7 @@ const Provider=({children})=>{
 const [touch,setTouch]=useState(true);
 const [animation,setAnimation]=useState(21);
 const [search,setSearch]=useState(false)
-const signUp=async(email,user,mobile,feedback,rating,password,msg,profession)=>{
+const signUp=async(email,user,mobile,feedback,rating,password,msg,proffesion)=>{
   if(email=="" || user=="" || mobile=="" || feedback=="" || rating=="" || password==""){
     message("enter")
     return
@@ -94,17 +94,17 @@ const signUp=async(email,user,mobile,feedback,rating,password,msg,profession)=>{
   setSearch(false)
   }
 }
-const sendMail=useCallback((email,user,mobile,feedback,rating,msg,profession)=>{
-{
+const sendMail=useCallback((email,user,mobile,feedback,rating,msg,proffesion)=>{
+console.log("entered")
 emailjs.send('service_cdui48n','template_denuftn',{
   user,email
 })
+.catch(err=>console.log(err))
 emailjs.send('service_cdui48n','template_ce8kq7c',{
-  user,email,phone:mobile,feedback,rating,message:msg,profession
+  user,email,phone:mobile,feedback,rating,message:msg,proffesion
 })
 .catch(err=>{console.log(err)})
 message("connect")
-}
 },[signUp])
 const signIn=async(email,password)=>{
   if(email=="" || password==""){
