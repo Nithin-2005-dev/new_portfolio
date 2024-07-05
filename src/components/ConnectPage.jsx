@@ -4,7 +4,6 @@ import { FaConnectdevelop } from "react-icons/fa";
 import BtnLoader from './BtnLoader';
 const ConnectPage = ({setConnected}) => {
 const {sendMail,setTouch,signUp,search}=useContext(AnimationStore)
-console.log(search)
   let userRef=useRef();
   let mobileRef=useRef();
   let emailRef=useRef();
@@ -46,7 +45,7 @@ console.log(search)
         <div className='flex flex-wrap flex-row'>
         <button className='self-start m-3 bg-indigo-400 p-3 rounded-2xl' onClick={()=>
         {
-          signUp(emailRef.current.value,userRef.current.value,mobileRef.current.value,feedbackRef.current.value,ratingRef.current.value,passwordRef.current.value,messageRef.current.value)
+          signUp(emailRef.current.value,userRef.current.value,mobileRef.current.value,feedbackRef.current.value,ratingRef.current.value,passwordRef.current.value,messageRef.current.value,proffesionRef.current.value)
         userRef.current.value=""
         emailRef.current.value=""
         mobileRef.current.value=""

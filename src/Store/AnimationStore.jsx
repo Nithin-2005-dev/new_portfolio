@@ -1,4 +1,4 @@
-import { createContext, useRef, useState } from "react";
+import { createContext, useCallback, useRef, useState } from "react";
 import { Bounce, toast } from "react-toastify";
 import emailjs from '@emailjs/browser'
 import { Form } from "react-router-dom";
@@ -75,7 +75,7 @@ const Provider=({children})=>{
 const [touch,setTouch]=useState(true);
 const [animation,setAnimation]=useState(21);
 const [search,setSearch]=useState(false)
-const signUp=async(email,user,mobile,feedback,rating,password,msg)=>{
+const signUp=async(email,user,mobile,feedback,rating,password,msg,profession)=>{
   if(email=="" || user=="" || mobile=="" || feedback=="" || rating=="" || password==""){
     message("enter")
     return
@@ -83,7 +83,7 @@ const signUp=async(email,user,mobile,feedback,rating,password,msg)=>{
     setSearch(true)
   await createUserWithEmailAndPassword(auth,email,password)
   .then(res=>{
-    sendMail(email,user,mobile,feedback,rating,msg)
+    sendMail(email,user,mobile,feedback,rating,msg,proffesion)
     })
   .catch(err=>{
     if(err.message=="Firebase: Error (auth/email-already-in-use)."){
@@ -94,17 +94,18 @@ const signUp=async(email,user,mobile,feedback,rating,password,msg)=>{
   setSearch(false)
   }
 }
-const sendMail=(email,user,mobile,feedback,rating,msg)=>{
+const sendMail=useCallback((email,user,mobile,feedback,rating,msg,profession)=>{
 {
 emailjs.send('service_cdui48n','template_denuftn',{
   user,email
 })
 emailjs.send('service_cdui48n','template_ce8kq7c',{
-  user,email,phone:mobile,feedback,rating
+  user,email,phone:mobile,feedback,rating,message:msg,profession
 })
+.catch(err=>{console.log(err)})
 message("connect")
 }
-}
+},[signUp])
 const signIn=async(email,password)=>{
   if(email=="" || password==""){
     message("enter");
