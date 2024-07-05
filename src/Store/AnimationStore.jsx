@@ -96,11 +96,11 @@ const signUp=async(email,user,mobile,feedback,rating,password,msg,proffesion)=>{
 }
 const sendMail=useCallback((email,user,mobile,feedback,rating,msg,proffesion)=>{
 console.log("entered")
-emailjs.send('service_cdui48n','template_denuftn',{
+emailjs.send('service_ggz6yd9','template_denuftn',{
   user,email
 })
 .catch(err=>console.log(err))
-emailjs.send('service_cdui48n','template_ce8kq7c',{
+emailjs.send('service_ggz6yd9','template_ce8kq7c',{
   user,email,phone:mobile,feedback,rating,message:msg,proffesion
 })
 .catch(err=>{console.log(err)})
