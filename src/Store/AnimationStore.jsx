@@ -88,8 +88,10 @@ const signUp=async(email,user,mobile,feedback,rating,password,msg,proffesion)=>{
   .catch(err=>{
     if(err.message=="Firebase: Error (auth/email-already-in-use)."){
     message("inUse")
-    return
+    }else{
+      message("Firebase: Error (auth/invalid-credential)")
     }
+    return
   })
   setSearch(false)
   }
@@ -118,10 +120,11 @@ await signInWithEmailAndPassword(auth,email,password)
 setSearch(false)
   }
 }
+const [roboOn,setRobo]=useState(false)
 const animationChanger=(getAni)=>{
         setAnimation(getAni)
     }
-    return <AnimationStore.Provider value={{animation,animationChanger,message,touch,setTouch,sendMail,signUp,signIn,search}}>
+    return <AnimationStore.Provider value={{animation,animationChanger,message,touch,setTouch,sendMail,signUp,signIn,search,roboOn,setRobo}}>
         {children}
     </AnimationStore.Provider>
 }

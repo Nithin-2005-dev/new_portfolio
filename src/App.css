@@ -146,3 +146,11 @@ body{
   }
   
 }
+.bodoni-moda-sc {
+  font-family: "Bodoni Moda SC", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+.robot{
+  text-shadow: 0.2rem 0rem 00.5rem greenyellow;
+}
