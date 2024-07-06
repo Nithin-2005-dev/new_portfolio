@@ -39,8 +39,8 @@ const Home = () => {
       <br></br>
 </p>
     </div>
-    <span className='inline-block justify-center text-sm text-white absolute bg-gray-500 bg-opacity-50 rounded-lg p-2 font-mono font-extrabold w-1/4 md-text-xl text-center' style={{top:"60%",left:"32.5%"}}>
-      <a href='https://online.publuu.com/576350/1293671' target='_blank'>Download my resume</a>
+    <span className='inline-block justify-center text-sm text-white absolute bg-gray-500 bg-opacity-50 rounded-lg p-2 font-mono font-extrabold w-1/4 md-text-xl text-center' style={{top:"80%",left:"32.5%"}}>
+      <a href='https://online.publuu.com/576350/1293671' target='_blank'>Resume</a>
       </span></>}
     {(position=="right" && roboOn) && <div style={{width:"25vw",right:"2%"}} className='absolute top-1/4 bg-opacity-70 bg-gray-800'>
       <p className='text-xs text-emerald-50 font-bold z-30 border-0 p-4 bodoni-moda-sc shadow-lg shadow-slate-600 robot md:text-2xl'>
@@ -60,7 +60,7 @@ I'm thrilled to have you here. Enjoy exploring and feel free to reach out with a
         <button><FaDotCircle onClick={()=>{setPosition("front")}} className='text-4xl my-3 -mx-2' style={{color:position=="front"?'green':'white'}}/></button>
         <button><IoMdArrowDropright onClick={()=>{setPosition("right")}} style={{color:position=="right"?'green':'white'}}/></button>
       </div>
-      {!roboOn &&<div className='absolute text-white uppercase text-center flex flex-col justify-center items-center content-center w-1/2'  style={{top:"80%",right:"25%"}}>
+      {!roboOn &&<div className='absolute text-white uppercase text-center flex flex-col justify-center items-center content-center w-1/2'  style={{top:"70%",right:"25%"}}>
       <div className='font-bold font-serif'>Welcome to my portfolio.Where the creativity meets passion....</div>
       <div className='text-center capitalize font-thin text-red-400'>turn on the robo and rock the visit!!!</div>
       </div>}
