@@ -14,7 +14,7 @@ const Home = () => {
   const {roboOn,setRobo}=useContext(AnimationStore)
   return (<>
     <section>
-    <header><Header/><button className='absolute top-0 left-0 text-white text-4xl m-3 rotate-90'>{!roboOn?<MdOutlinePower onClick={()=>{setRobo(!roboOn)}} className=''/>:<MdOutlinePowerOff  onClick={()=>{setRobo(!roboOn)}} className='text-red-600'/>}</button></header>
+    <header><Header/></header>
      <motion.div className="flex flex-wrap"
      initial={{opacity:0,y:window.innerHeight,
      }}
@@ -37,7 +37,8 @@ const Home = () => {
 </p>
     </div>}
     </Suspense>
-      </motion.div> 
+      </motion.div>
+      <button className='fixed top-8 left-0 text-white text-4xl m-3 rotate-90'>{!roboOn?<MdOutlinePower onClick={()=>{setRobo(!roboOn)}} className=''/>:<MdOutlinePowerOff  onClick={()=>{setRobo(!roboOn)}} className='text-red-600'/>}</button> 
     </section>
     </>
   )
