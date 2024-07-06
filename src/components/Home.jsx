@@ -34,17 +34,21 @@ const Home = () => {
     <HelloRobo scale={window.innerWidth<500?3.5:6} />
     <Environment preset='studio'/>
     </Canvas>
-    {(position=="front" && roboOn) && <div style={{width:"50vw",right:"30%"}} className='absolute top-1/4 bg-opacity-70 bg-gray-800'>
+    {(position=="front" && roboOn) && <><div style={{width:"50vw",right:"25%"}} className='absolute top-1/4 bg-opacity-70 bg-gray-800'>
       <p className='text-sm text-emerald-50 font-bold z-30 border p-4 bodoni-moda-sc shadow-md shadow-slate-50 robot md:text-2xl'>Hello, I'm  Nithin. I am currently pursuing a B.Tech in Electrical Engineering at NIT Silchar. I have a strong interest in web development. I am eager to continue exploring and growing in the web development domain.
+      <br></br>
 </p>
-    </div>}
+    </div>
+    <span className='inline-block justify-center text-sm text-white absolute bg-gray-500 bg-opacity-50 rounded-lg p-2 font-mono font-extrabold w-1/4 md-text-xl text-center' style={{top:"60%",left:"32.5%"}}>
+      <a href='https://online.publuu.com/576350/1293671' target='_blank'>Download my resume</a>
+      </span></>}
     {(position=="right" && roboOn) && <div style={{width:"25vw",right:"2%"}} className='absolute top-1/4 bg-opacity-70 bg-gray-800'>
-      <p className='text-xs text-emerald-50 font-bold z-30 border p-4 bodoni-moda-sc shadow-md shadow-slate-950 robot md:text-2xl'>
+      <p className='text-xs text-emerald-50 font-bold z-30 border-0 p-4 bodoni-moda-sc shadow-lg shadow-slate-600 robot md:text-2xl'>
       Enjoy exploring my portfolio with its immersive 3D experience. Dive in and discover the projects I've been working on. Enjoy your visit!
 </p>
     </div>}
     {(position=="left" && roboOn) && <div style={{width:"25vw"}} className='absolute top-1/4 bg-opacity-70 bg-gray-800 left-2'>
-      <p className='text-xs text-emerald-50 font-bold z-30 border p-4 bodoni-moda-sc shadow-md shadow-slate-950 robot md:text-2xl'>Welcome!<br></br>
+      <p className='text-xs text-emerald-50 font-bold z-30 border-0 p-4 bodoni-moda-sc shadow-lg shadow-slate-600 robot md:text-2xl'>Welcome!<br></br>
 I'm thrilled to have you here. Enjoy exploring and feel free to reach out with any questions. Happy browsing!
 </p>
     </div>}
@@ -56,6 +60,10 @@ I'm thrilled to have you here. Enjoy exploring and feel free to reach out with a
         <button><FaDotCircle onClick={()=>{setPosition("front")}} className='text-4xl my-3 -mx-2' style={{color:position=="front"?'green':'white'}}/></button>
         <button><IoMdArrowDropright onClick={()=>{setPosition("right")}} style={{color:position=="right"?'green':'white'}}/></button>
       </div>
+      {!roboOn &&<div className='absolute text-white uppercase text-center flex flex-col justify-center items-center content-center w-1/2'  style={{top:"80%",right:"25%"}}>
+      <div className='font-bold font-serif'>Welcome to my portfolio.Where the creativity meets passion....</div>
+      <div className='text-center capitalize font-thin text-red-400'>turn on the robo and rock the visit!!!</div>
+      </div>}
     </section>
     </>
   )
