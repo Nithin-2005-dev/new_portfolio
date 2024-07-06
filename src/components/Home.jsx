@@ -43,7 +43,7 @@ const Home = () => {
       Enjoy exploring my portfolio with its immersive 3D experience. Dive in and discover the projects I've been working on. Enjoy your visit!
 </p>
     </div>}
-    {(position=="left" && roboOn) && <div style={{width:"20vw"}} className='absolute top-1/4 bg-opacity-70 bg-gray-800 left-2'>
+    {(position=="left" && roboOn) && <div style={{width:"25vw"}} className='absolute top-1/4 bg-opacity-70 bg-gray-800 left-2'>
       <p className='text-xs text-emerald-50 font-bold z-30 border p-4 bodoni-moda-sc shadow-md shadow-slate-950 robot md:text-2xl'>Welcome!<br></br>
 I'm thrilled to have you here. Enjoy exploring and feel free to reach out with any questions. Happy browsing!
 </p>
