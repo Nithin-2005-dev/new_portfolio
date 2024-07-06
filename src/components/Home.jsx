@@ -10,8 +10,10 @@ import { Canvas } from '@react-three/fiber'
 import { Environment } from '@react-three/drei'
 import { AnimationStore } from '../Store/AnimationStore'
 import { MdOutlinePower ,MdOutlinePowerOff} from "react-icons/md";
+import { IoMdArrowDropleft,IoMdArrowDropright } from "react-icons/io";
+import { FaDotCircle } from "react-icons/fa";
 const Home = () => {
-  const {roboOn,setRobo}=useContext(AnimationStore)
+  const {roboOn,setRobo,setPosition,position}=useContext(AnimationStore)
   return (<>
     <section>
     <header><Header/></header>
@@ -29,7 +31,7 @@ const Home = () => {
      >
     <Suspense fallback={<Loader/>}>
     <Canvas style={{height:"90vh"}}>
-    <HelloRobo scale={window.innerWidth<600?4:6} />
+    <HelloRobo scale={window.innerWidth<500?3.5:6} />
     <Environment preset='studio'/>
     </Canvas>
     {roboOn && <div style={{width:"50vw",right:"30%"}} className='absolute top-1/4 bg-opacity-70 bg-gray-800'>
@@ -39,6 +41,11 @@ const Home = () => {
     </Suspense>
       </motion.div>
       <button className='fixed top-8 left-0 text-white text-4xl m-3 rotate-90'>{!roboOn?<MdOutlinePower onClick={()=>{setRobo(!roboOn)}} className=''/>:<MdOutlinePowerOff  onClick={()=>{setRobo(!roboOn)}} className='text-red-600'/>}</button> 
+      <div className='absolute top-20 left-1/2 text-white text-6xl -mx-14 flex flex-row'>
+        <button><IoMdArrowDropleft onClick={()=>{setPosition("left")}} style={{color:position=="left"?'green':'white'}}/></button>
+        <button><FaDotCircle onClick={()=>{setPosition("front")}} className='text-4xl my-3 -mx-2' style={{color:position=="front"?'green':'white'}}/></button>
+        <button><IoMdArrowDropright onClick={()=>{setPosition("right")}} style={{color:position=="right"?'green':'white'}}/></button>
+      </div>
     </section>
     </>
   )

@@ -121,10 +121,11 @@ setSearch(false)
   }
 }
 const [roboOn,setRobo]=useState(false)
+const [position,setPosition]=useState("front")
 const animationChanger=(getAni)=>{
         setAnimation(getAni)
     }
-    return <AnimationStore.Provider value={{animation,animationChanger,message,touch,setTouch,sendMail,signUp,signIn,search,roboOn,setRobo}}>
+    return <AnimationStore.Provider value={{animation,animationChanger,message,touch,setTouch,sendMail,signUp,signIn,search,roboOn,setRobo,position,setPosition}}>
         {children}
     </AnimationStore.Provider>
 }

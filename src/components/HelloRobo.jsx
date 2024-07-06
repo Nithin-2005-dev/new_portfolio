@@ -13,7 +13,7 @@ import { AnimationStore } from '../Store/AnimationStore'
 
 export default function Model(props) {
   const group = useRef()
-  const {roboOn,setRobo}=useContext(AnimationStore)
+  const {roboOn,setRobo,position}=useContext(AnimationStore)
   const { nodes, materials, animations } = useGLTF('/compressed (6).glb')
   const { actions ,names} = useAnimations(animations, group)
   useFrame((state,delta)=>{
@@ -27,7 +27,7 @@ export default function Model(props) {
     }
   })
   return (
-    <group ref={group} {...props} dispose={null} rotation={[0,1.57,0]}>
+    <group ref={group} {...props} dispose={null} rotation={position=="front"?[0,1.57,0]:position=="right"?[0,3.14,0]:[0,0,0]}>
       <group name="Sketchfab_Scene">
         <group name="RootNode" scale={0.002}>
           <group
