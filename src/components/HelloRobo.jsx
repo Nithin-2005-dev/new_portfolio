@@ -27,7 +27,7 @@ export default function Model(props) {
     }
   })
   return (
-    <group ref={group} {...props} dispose={null} rotation={position=="front"?[0,1.57,0]:position=="right"?[0,3.14,0]:[0,0,0]}>
+    <group ref={group} {...props} dispose={null} rotation={position=="front"?[0,Math.PI/2,0]:position=="right"?[0,5*Math.PI/6,0]:[0,Math.PI/6,0]}>
       <group name="Sketchfab_Scene">
         <group name="RootNode" scale={0.002}>
           <group
