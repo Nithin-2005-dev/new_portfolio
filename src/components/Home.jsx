@@ -37,7 +37,7 @@ const Home = () => {
       <br></br>
 </p>
     </div>
-    <span className='inline-block justify-center text-sm text-white absolute bg-gray-500 bg-opacity-50 rounded-lg p-2 font-mono font-extrabold w-1/4 md-text-xl text-center' style={{top:"70%",left:"32.5%"}}>
+    <span className='inline-block justify-center text-sm text-white absolute bg-gray-500 bg-opacity-50 rounded-lg p-2 font-mono font-extrabold w-1/4 md-text-xl text-center' style={{top:"80%",left:"32.5%"}}>
       <a href='https://online.publuu.com/576350/1293671' target='_blank'>Resume</a>
       </span></>}
     {(position=="right" && roboOn) && <div style={{width:"25vw",right:"2%"}} className='absolute top-1/4 bg-opacity-70 bg-gray-800 virtual '>
