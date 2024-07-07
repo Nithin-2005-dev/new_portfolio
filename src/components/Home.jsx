@@ -34,8 +34,8 @@ const Home = () => {
     <HelloRobo scale={window.innerWidth<500?3.5:6} />
     <Environment preset='studio'/>
     </Canvas>
-    {(position=="front" && roboOn) && <><div style={{width:"50vw",right:"25%"}} className='absolute top-1/4 bg-opacity-70 bg-gray-800'>
-      <p className='text-sm text-emerald-50 font-bold z-30 border p-4 bodoni-moda-sc shadow-md shadow-slate-50 robot md:text-2xl'>Hello, I'm  Nithin. I am currently pursuing a B.Tech in Electrical Engineering at NIT Silchar. I have a strong interest in web development. I am eager to continue exploring and growing in the web development domain.
+    {(position=="front" && roboOn) && <><div style={{width:"50vw",right:"25%"}} className='absolute top-1/4 bg-opacity-70 bg-gray-800 virtual'>
+      <p className='text-sm text-emerald-50 font-bold z-30 border p-4 bodoni-moda-sc shadow-md shadow-white robot md:text-2xl opacity-100'>Hello, I'm  Nithin. I am currently pursuing a B.Tech in Electrical Engineering at NIT Silchar. I have a strong interest in web development. I am eager to continue exploring and growing in the web development domain.
       <br></br>
 </p>
     </div>
@@ -52,18 +52,18 @@ const Home = () => {
 I'm thrilled to have you here. Enjoy exploring and feel free to reach out with any questions. Happy browsing!
 </p>
     </div>}
-    </Suspense>
-      </motion.div>
+    {!roboOn &&<div className='absolute text-white uppercase text-center flex flex-col justify-center items-center content-center w-1/2'  style={{top:"70%",right:"25%"}}>
+      <div className='font-bold font-serif'>Welcome to my portfolio.Where the creativity meets passion....</div>
+      <div className='text-center capitalize font-thin text-red-400'>turn on the robo and rock the visit!!!</div>
+      </div>}
       <button className='fixed top-8 left-0 text-white text-4xl m-3 rotate-90'>{!roboOn?<MdOutlinePower onClick={()=>{setRobo(!roboOn)}} className=''/>:<MdOutlinePowerOff  onClick={()=>{setRobo(!roboOn)}} className='text-red-600'/>}</button> 
       <div className='absolute top-20 left-1/2 text-white text-6xl -mx-14 flex flex-row'>
         <button><IoMdArrowDropleft onClick={()=>{setPosition("left")}} style={{color:position=="left"?'green':'white'}}/></button>
         <button><FaDotCircle onClick={()=>{setPosition("front")}} className='text-4xl my-3 -mx-2' style={{color:position=="front"?'green':'white'}}/></button>
         <button><IoMdArrowDropright onClick={()=>{setPosition("right")}} style={{color:position=="right"?'green':'white'}}/></button>
       </div>
-      {!roboOn &&<div className='absolute text-white uppercase text-center flex flex-col justify-center items-center content-center w-1/2'  style={{top:"70%",right:"25%"}}>
-      <div className='font-bold font-serif'>Welcome to my portfolio.Where the creativity meets passion....</div>
-      <div className='text-center capitalize font-thin text-red-400'>turn on the robo and rock the visit!!!</div>
-      </div>}
+    </Suspense>
+      </motion.div>
     </section>
     </>
   )

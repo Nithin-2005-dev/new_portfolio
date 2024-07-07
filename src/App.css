@@ -152,8 +152,20 @@ body{
   font-style: normal;
 }
 .robot{
-  text-shadow: 0.2rem 0rem 0.5rem chocolate;
+  text-shadow: 0.2rem 0.2rem 0.5rem whitesmoke;
+  opacity: 1;
 }
-@keyframes animateRobo{
-
+.virtual{
+  background-image: url("./assets/virtual.jpg");
+  background-size: contain;
+  opacity: 0.3;
+  animation: virtual-move 4s ease-in-out 0s infinite;
+}
+@keyframes virtual-move {
+  from{
+    transform:translateY(-1rem);
+  }to{
+    transform:translateY(1rem);
+  }
+  
 }
