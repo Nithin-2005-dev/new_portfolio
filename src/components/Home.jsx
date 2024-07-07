@@ -32,20 +32,20 @@ const Home = () => {
     <HelloRobo scale={window.innerWidth<500?3.5:6} />
     <Environment preset='studio'/>
     </Canvas>
-    {(position=="front" && roboOn) && <><div style={{width:"50vw",right:"25%"}} className='absolute top-1/4 bg-opacity-70 bg-gray-800 virtual'>
-      <p className='text-sm text-emerald-50 font-bold z-30 border p-4 bodoni-moda-sc shadow-md shadow-white robot md:text-2xl opacity-100'>Hello, I'm  Nithin. I am currently pursuing a B.Tech in Electrical Engineering at NIT Silchar. I have a strong interest in web development. I am eager to continue exploring and growing in the web development domain.
+    {(position=="front" && roboOn) && <><div style={{right:"25%"}} className='absolute top-1/4 bg-opacity-70 bg-gray-800 virtual w-1/2'>
+      <p className='text-sm text-emerald-50 font-extrabold z-30 border p-4 bodoni-moda-sc shadow-md shadow-white robot md:text-2xl opacity-100 '>Hello, I'm  Nithin. I am currently pursuing a B.Tech in Electrical Engineering at NIT Silchar. I have a strong interest in web development. I am eager to continue exploring and growing in the web development domain.
       <br></br>
 </p>
     </div>
     <span className='inline-block justify-center text-sm text-white absolute bg-gray-500 bg-opacity-50 rounded-lg p-2 font-mono font-extrabold w-1/4 md-text-xl text-center' style={{top:"70%",left:"32.5%"}}>
       <a href='https://online.publuu.com/576350/1293671' target='_blank'>Resume</a>
       </span></>}
-    {(position=="right" && roboOn) && <div style={{width:"25vw",right:"2%"}} className='absolute top-1/4 bg-opacity-70 bg-gray-800'>
+    {(position=="right" && roboOn) && <div style={{width:"25vw",right:"2%"}} className='absolute top-1/4 bg-opacity-70 bg-gray-800 virtual '>
       <p className='text-xs text-emerald-50 font-bold z-30 border-0 p-4 bodoni-moda-sc shadow-lg shadow-slate-600 robot md:text-2xl'>
       Enjoy exploring my portfolio with its immersive 3D experience. Dive in and discover the projects I've been working on. Enjoy your visit!
 </p>
     </div>}
-    {(position=="left" && roboOn) && <div style={{width:"25vw"}} className='absolute top-1/4 bg-opacity-70 bg-gray-800 left-2'>
+    {(position=="left" && roboOn) && <div style={{width:"25vw"}} className='absolute top-1/4 bg-opacity-70 bg-gray-800 left-2 virtual '>
       <p className='text-xs text-emerald-50 font-bold z-30 border-0 p-4 bodoni-moda-sc shadow-lg shadow-slate-600 robot md:text-2xl'>Welcome!<br></br>
 I'm thrilled to have you here. Enjoy exploring and feel free to reach out with any questions. Happy browsing!
 </p>
