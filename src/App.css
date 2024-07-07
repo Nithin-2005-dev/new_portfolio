@@ -159,7 +159,7 @@ body{
   background-image: url("https://i.postimg.cc/63sGJBxx/virtual.jpg");
   background-size: contain;
   opacity: 0.3;
-  animation: virtual-move 4s ease-in-out 0s infinite;
+  animation: virtual-move 4s ease-in-out 0s infinite alternate;
 }
 @keyframes virtual-move {
   from{
