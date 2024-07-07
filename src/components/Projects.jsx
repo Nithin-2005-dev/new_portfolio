@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import {Canvas} from '@react-three/fiber'
 import { Environment } from '@react-three/drei'
-import DollModel from './DollModel'
 import ProjectCard from './ProjectCard'
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';

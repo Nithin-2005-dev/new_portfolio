@@ -1,6 +1,4 @@
 import React, { Suspense, useContext, useState } from 'react'
-import SkullModel from './SkullModel'
-import Card from './Card'
 import HelloRobo from './HelloRobo'
 import {AnimatePresence, motion} from 'framer-motion'
 import Loader from './Loader'

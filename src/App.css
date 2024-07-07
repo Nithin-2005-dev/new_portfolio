@@ -156,7 +156,7 @@ body{
   opacity: 1;
 }
 .virtual{
-  background-image: url("./assets/virtual.jpg");
+  background-image: url("https://i.postimg.cc/63sGJBxx/virtual.jpg");
   background-size: contain;
   opacity: 0.3;
   animation: virtual-move 4s ease-in-out 0s infinite;
