@@ -6,22 +6,19 @@ import { auth } from './Firebase';
 import ConnectedUsers from './ConnectedUsers';
 import Header from './Header';
 import ConnectPage from './ConnectPage';
+import { AnimationStore } from '../Store/AnimationStore';
 
 const ProtectedPage = () => {
-  const [isConnected,setUser]=useState(false);
+  const {message,isConnected,userDetails}=useContext(AnimationStore);
   useEffect(()=>{
-    onAuthStateChanged(auth,(user)=>{
-        if(user){
-            setUser(true);
-        }else{
-            setUser(false);
-        }
-    })
-  })
+    if(isConnected && !userDetails.emailVerified){
+      message("notVerified")
+    }
+  },[auth])
   return (
     <>
     {/* <Contact/> */}
-     {isConnected?<ConnectedUsers/>:<Contact/>} 
+     {(isConnected && userDetails.emailVerified)?<ConnectedUsers key={"forUsers"}/>:<Contact key={"forNotUsers"}/>} 
     </>
   )
 }
