@@ -5,6 +5,7 @@ import { AnimationStore } from '../Store/AnimationStore'
 import { FaWhatsapp } from "react-icons/fa";
 import BlogCard from './BlogCard';
 import { VscDebugDisconnect } from "react-icons/vsc";
+import {AnimatePresence, motion} from 'framer-motion'
 const ConnectedUsers = () => {
   const {userDetails,disconnect}=useContext(AnimationStore)
   const [pop,setPop]=useState(false)
@@ -29,11 +30,27 @@ I'm excited to announce that my updated portfolio is now complete! It showcases 
     source:null,
   }]
   return (
-    <>
+    <AnimatePresence>
+    <motion.div 
+    initial={{opacity:0}}
+    animate={{opacity:1,
+    transition:{
+      duration:2,
+      staggerChildren:1
+    }
+    }}
+    >
     <div style={{opacity:pop?'0.1':'1'}}>
     <Header></Header>
     <section>
-    <div className='flex flex-col gap-3 m-5 border p-3 bg-slate-500 shadow-md shadow-slate-300 bg-opacity-20'>
+    <motion.div initial={{opacity:0}} whileInView={{
+      opacity:1,
+      transition:{
+        duration:2
+      }
+    }} viewport={{
+      amount:0.5
+    }} className='flex flex-col gap-3 m-5 border p-3 bg-slate-500 shadow-md shadow-slate-300 bg-opacity-20'>
     <div className='text-rose-400 text-xl capitalize font-serif font-extrabold'>{greet+userDetails.displayName}</div>
     <div className='text-pink-500 text-base font-mono font-medium'>Welcome back to my portfolio!</div>
     <div className='text-fuchsia-200 italic font-extralight'>Thank you so much for connecting with me! I truly appreciate your interest in my work and projects. Your support and feedback mean a lot and help me grow and improve. If you have any questions or suggestions, feel free to reach out. I look forward to staying connected and sharing more exciting projects with you in the future!
@@ -43,11 +60,11 @@ Best regards,<br></br>
 Nithin
 </pre>
 <div className='flex justify-between'>
-<div className='text-white mx-3 text-lg capitalize font-semibold'>connect me in whatsapp<a href='https://wa.me/918179133593?text=Hey%20Nithin' target='_blank'><FaWhatsapp className='inline-block mx-3 bg-green-600 p-1 text-4xl rounded-2xl'/></a>
+<div className='text-white mx-3 text-lg capitalize font-semibold'>connect me in whatsapp<motion.a href='https://wa.me/918179133593?text=Hey%20Nithin' target='_blank'><FaWhatsapp className='inline-block mx-3 bg-green-600 p-1 text-4xl rounded-2xl'/></motion.a>
 </div>
 <button className='bg-red-500 p-2 rounded-lg text-white font-bold hover:scale-110' onClick={()=>setPop(true)}>Disconnect<VscDebugDisconnect className='inline-block text-2xl mx-1' onClick={{}}/></button>
 </div>
-</div>
+</motion.div>
 <div className='flex justify-center'><p className='text-purple-300 text-lg text-center font-bold [text-shadow:_0rem_0.1rem_0.5rem_rgb(255_244_255_/_80%)] my-5 p-2 inline-block w-1/2 shadow-lg shadow-slate-800 rounded-2xl capitalize'>checkout my Blogs here</p></div>
 {/* <p className='text-white text-center m-10 p-7 font-medium text-xl'>No blogs yet</p> */}
 <div className='flex flex-col items-center'>
@@ -66,7 +83,8 @@ Nithin
   }}>Not sure</button></div>
 </div>}
     
-</>
+</motion.div>
+</AnimatePresence>
   )
 }
 
