@@ -169,3 +169,18 @@ body{
   }
   
 }
+.space{
+  background-image: url("./assets/space.jpg");
+}
+.rocket{
+  background-image: url("./assets/rocket.png");
+  height: 30vh;
+}
+.blog-card{
+  background: linear-gradient(to right,#405D72,#758694);
+  /* box-shadow: 1rem 1rem 1rem #FFF8F3; */
+  padding: 1rem;
+  opacity: 0.7;
+  border: 2px solid #eeb8b8;
+  border-radius: 4rem 0rem;
+}

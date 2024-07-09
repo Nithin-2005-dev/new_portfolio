@@ -29,6 +29,9 @@ console.log(search)
         <button className='self-start m-3 bg-indigo-400 py-4 px-3 rounded-2xl text-xs font-bold' onClick={()=>{
             setConnected(false)
         }}>want to connect?</button>
+        <button className='self-start m-3 bg-red-400 py-4 px-1 rounded-2xl text-xs font-bold' onClick={()=>{
+            setConnected(false)
+        }} >Can't Remember Password?</button>
         </div>
       </div>
   )

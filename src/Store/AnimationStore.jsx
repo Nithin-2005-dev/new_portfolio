@@ -2,7 +2,7 @@ import { createContext, useCallback, useEffect, useRef, useState } from "react";
 import { Bounce, toast } from "react-toastify";
 import emailjs from '@emailjs/browser'
 import { Form } from "react-router-dom";
-import { createUserWithEmailAndPassword, onAuthStateChanged, sendEmailVerification, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, onAuthStateChanged, sendEmailVerification, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
 import {auth} from '../components/Firebase'
 emailjs.init('z-mZlwkT3QPg9Ht6o')
 const AnimationStore=createContext({
@@ -156,7 +156,10 @@ const [position,setPosition]=useState("front")
 const animationChanger=(getAni)=>{
         setAnimation(getAni)
     }
-    return <AnimationStore.Provider value={{animation,animationChanger,message,touch,setTouch,sendMail,signUp,signIn,search,roboOn,setRobo,position,setPosition,isConnected,userDetails}}>
+  const disconnect=()=>{
+    signOut(auth);
+  }
+    return <AnimationStore.Provider value={{animation,animationChanger,message,touch,setTouch,sendMail,signUp,signIn,search,roboOn,setRobo,position,setPosition,isConnected,userDetails,disconnect}}>
         {children}
     </AnimationStore.Provider>
 }
