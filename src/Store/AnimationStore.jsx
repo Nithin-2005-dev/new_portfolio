@@ -70,8 +70,8 @@ const message=(str)=>{
       transition: Bounce,
       });
 }else if(str=="notVerified"){
-  toast.error('please verify your email', {
-    position: "top-right",
+  toast.error('please verify your email and reload the page', {
+    position: "bottom-right",
     autoClose: 5000,
     hideProgressBar: false,
     closeOnClick: true,
