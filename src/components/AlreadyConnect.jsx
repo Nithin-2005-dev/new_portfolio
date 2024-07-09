@@ -2,9 +2,10 @@ import React, { useContext, useRef } from 'react'
 import { AnimationStore } from '../Store/AnimationStore';
 import { FaConnectdevelop } from "react-icons/fa";
 import BtnLoader from './BtnLoader';
+import { sendPasswordResetEmail } from 'firebase/auth';
+import { auth } from './Firebase';
 const AlreadyConnect = ({setConnected}) => {
-const {sendMail,setTouch,signIn,search}=useContext(AnimationStore)
-console.log(search)
+const {sendMail,setTouch,signIn,search,userDetails,message}=useContext(AnimationStore)
   let emailRef=useRef();
   let passwordRef=useRef();
   return (
@@ -30,8 +31,9 @@ console.log(search)
             setConnected(false)
         }}>want to connect?</button>
         <button className='self-start m-3 bg-red-400 py-4 px-1 rounded-2xl text-xs font-bold' onClick={()=>{
-            setConnected(false)
-        }} >Can't Remember Password?</button>
+            sendPasswordResetEmail(auth,userDetails.email)
+            message("reset")
+        }}>Can't Remember Password?</button>
         </div>
       </div>
   )

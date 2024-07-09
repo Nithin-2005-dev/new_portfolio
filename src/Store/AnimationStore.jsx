@@ -81,6 +81,18 @@ const message=(str)=>{
     theme: "colored",
     transition: Bounce,
     });
+}else if(str=="reset"){
+  toast.info('please check your email to reset password', {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "colored",
+    transition: Bounce,
+    });
 }
 }
 const Provider=({children})=>{

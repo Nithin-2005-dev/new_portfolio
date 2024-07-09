@@ -136,13 +136,13 @@ body{
   }
 }
 .robo-msg{
-  animation: move 1s ease-in-out 1s infinite;
+  animation: move 2s ease-in-out 1s infinite alternate;
 }
 @keyframes move {
   from{
-    scale: 0.8;
+    scale: 0.9;
   }to{
-    scale:1.5
+    scale:1.2
   }
   
 }

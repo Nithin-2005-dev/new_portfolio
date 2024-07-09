@@ -21,7 +21,7 @@ export default function Model(props) {
   },[animation])
   return (
     <group ref={group} {...props} dispose={null} scale={robo_scale} position={[0,-1,0]}>
-   {showMsg && <Html position={[0.07,0.3,0.1]} className="text-3xl text-zinc-100 robo-msg cursor-pointer"><FaMessage onClick={()=>{
+   {showMsg && <Html position={[0.05,0.3,0.1]} className="text-3xl text-emerald-200 robo-msg cursor-pointer"><FaMessage onClick={()=>{
    props.message("info")
     setMsg(!showMsg)
    }}/></Html>}

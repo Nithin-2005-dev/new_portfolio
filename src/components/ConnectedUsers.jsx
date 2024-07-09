@@ -58,10 +58,10 @@ Nithin
     </section>
     </div>
     {pop && <div  className='absolute text-white top-1/2 right-1/4 w-1/2 bg-red-500 p-5 rounded-lg opacity-100 z-30' style={{opacity:1}}>
-  <p className='text-lg font-semibold'>Are you sure to disconnect with Nithin?</p>
-  <div className='flex justify-between p-1 m-1 font-bold'><button className='bg-indigo-300 rounded-xl p-2 hover:scale-110' onClick={()=>{
+  <p className={`${window.innerWidth<700?'text-sm':'text-lg'} font-semibold`}>Are you sure to disconnect with Nithin?</p>
+  <div className='flex justify-between p-1 m-1 font-bold'><button className={`bg-indigo-300 rounded-xl p-2 hover:scale-110 ${window.innerWidth<700?'text-xs':'text-lg'}`} onClick={()=>{
     disconnect()
-  }}>Yes I'm sure</button><button className='bg-indigo-300 rounded-xl p-2 hover:scale-110' onClick={()=>{
+  }}>Yes I'm sure</button><button className={`bg-indigo-300 rounded-xl p-2 hover:scale-110 ${window.innerWidth<700?'text-xs':'text-lg'}`} onClick={()=>{
     setPop(false)
   }}>Not sure</button></div>
 </div>}
