@@ -2,7 +2,6 @@
 from="/*"
 to="/index.html"
 status=200
-[[redirect]]
-from="/contact"
+from="/contact*"
 to="/index.html"
 status=200
