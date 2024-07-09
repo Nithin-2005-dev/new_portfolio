@@ -9,7 +9,7 @@ const BlogCard = ({blog}) => {
       damping:5,
       staggerChildren:1,
     }}} viewport={{
-      amount:1
+      amount:0.6
     }} className={`text-white flex flex-col text-center ${window.innerWidth<700?'w-3/4':'w-1/2'} blog-card m-4`}>
         <p className='text-xl uppercase font-bold underline' style={{color:"#F7E7DC"}}>{blog.title}</p>
         <motion.p 
@@ -17,7 +17,7 @@ const BlogCard = ({blog}) => {
       duration:1,
       delayChildren:1,
     }}} viewport={{
-      amount:1
+      amount:0.5
     }}
         className='text-start font-serif italic text-lg text-rose-950 p-2 font-semibold' >{blog.body}</motion.p>
         {blog.source && <a href={blog.source} target='_blank' className='text-3xl mx-4 my-2' style={{color:"#FFF8F3"}}><FaGithub /></a>}
