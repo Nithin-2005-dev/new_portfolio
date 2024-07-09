@@ -1,7 +1,0 @@
-[[redirect]]
-from="/*"
-to="/index.html"
-status=200
-from="/contact*"
-to="/index.html"
-status=200
