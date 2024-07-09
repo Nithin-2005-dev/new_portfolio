@@ -11,7 +11,6 @@ const ConnectedUsers = () => {
   const [pop,setPop]=useState(false)
   let greet;
   let time=new Date();
-  console.log(time.getHours())
   if(time.getHours()>=0 && time.getHours()<12){
     greet="good morning,"
   }else if(time.getHours()>=12 && time.getHours()<=17){
