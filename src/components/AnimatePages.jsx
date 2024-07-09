@@ -8,6 +8,7 @@ import { AnimatePresence } from 'framer-motion'
 import Loader from './Loader'
 import { Provider } from '../Store/AnimationStore'
 import ProtectedPage from './ProtectedPage'
+import ConnectedUsers from './ConnectedUsers'
 const AnimatePages = () => {
     const location=useLocation();
   return (

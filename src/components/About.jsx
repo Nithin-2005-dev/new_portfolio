@@ -85,51 +85,51 @@ const About = () => {
     <div className="flex flex-wrap justify-center text-white text-6xl rounded-lg content-center"  style={{height:"100vh",width:"40vw"}}>
       <div className="self-center text-center font-bold [text-shadow:_0rem_0.1rem_0.5rem_rgb(255_244_255_/_100%)] cursor-pointer w-full">skills</div>
       <MdHtml className={`shadow-skill m-2 hover:scale-110 cursor-grab`} onClick={()=>{animationChanger(2)
-      setInfo(false)
+      
     }
       }/>
       <MdCss className={`shadow-skill m-2 hover:scale-110 cursor-grab`} onClick={()=>{animationChanger(5)
-      setInfo(false)
+      
     }
       }/>
       <AiOutlineJavaScript className={`shadow-skill m-2 hover:scale-110 cursor-grab`} onClick={()=>{animationChanger(6)
-      setInfo(false)
+      
     }
       }/>
       <FaJava className={`shadow-skill m-2 hover:scale-110 cursor-grab`} onClick={()=>{animationChanger(7)
-      setInfo(false)
+      
     }
       } />
       <FaReact className={`shadow-skill m-2 hover:scale-110 cursor-grab`} onClick={()=>{animationChanger(8)
-      setInfo(false)
+      
     }
       } />
       <IoLogoFirebase className={`shadow-skill m-2 hover:scale-110 cursor-grab`} onClick={()=>{animationChanger(11)
-      setInfo(false)
+      
       }}/>
       <RiTailwindCssFill className={`shadow-skill m-2 hover:scale-110 cursor-grab`} onClick={()=>{animationChanger(13)
-      setInfo(false)
+      
       }}/>
       <RiBootstrapLine className={`shadow-skill m-2 hover:scale-110 cursor-grab`} onClick={()=>{animationChanger(14)
-      setInfo(false)
+      
       }}/>
       <SiAdobephotoshop className={`shadow-skill m-2 hover:scale-110 cursor-grab`} onClick={()=>{animationChanger(20)
-      setInfo(false)
+      
       }}/>
       <TbCircleLetterC className={`shadow-skill m-2 hover:scale-110 cursor-grab`} onClick={()=>{animationChanger(23)
-      setInfo(false)
+      
       }}/>
       <SiThreedotjs className={`shadow-skill m-2 hover:scale-110 cursor-grab`} onClick={()=>{animationChanger(24)
-      setInfo(false)
+      
       }}/>
       <SiFramer className={`shadow-skill m-2 hover:scale-110 cursor-grab`} onClick={()=>{animationChanger(25)
-      setInfo(false)
+      
       }}/>
       <FaGithub className={`shadow-skill m-2 hover:scale-110 cursor-grab`} onClick={()=>{animationChanger(16)
-      setInfo(false)
+      
       }}/>
       <FaGitAlt className={`shadow-skill m-2 hover:scale-110 cursor-grab`} onClick={()=>{animationChanger(27)
-      setInfo(false)
+      
       }}/>
       </div>
       </div>

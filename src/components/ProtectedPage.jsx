@@ -7,6 +7,7 @@ import ConnectedUsers from './ConnectedUsers';
 import Header from './Header';
 import ConnectPage from './ConnectPage';
 import { AnimationStore } from '../Store/AnimationStore';
+import { useNavigate } from 'react-router';
 
 const ProtectedPage = () => {
   const {message,isConnected,userDetails}=useContext(AnimationStore);
@@ -15,9 +16,9 @@ const ProtectedPage = () => {
       message("notVerified")
     }
   },[auth])
+  const Navigate=useNavigate()
   return (
     <>
-    {/* <Contact/> */}
      {(isConnected && userDetails.emailVerified)?<ConnectedUsers key={"forUsers"}/>:<Contact key={"forNotUsers"}/>} 
     </>
   )
