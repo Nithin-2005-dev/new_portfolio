@@ -156,9 +156,9 @@ body{
   color:floralwhite;
 }
 .virtual{
-  background-image: url("https://i.postimg.cc/63sGJBxx/virtual.jpg");
+  background-image: url("https://i.postimg.cc/5tQcP0k8/virtual2.jpg");
   background-size: contain;
-  opacity: 0.4;
+  opacity: 0.5;
   animation: virtual-move 4s ease-in-out 0s infinite alternate;
 }
 @keyframes virtual-move {
