@@ -2,7 +2,6 @@ import { Canvas } from '@react-three/fiber';
 import React, { Suspense, useContext, useRef, useState } from 'react'
 import FlyingRobo from './FlyingRobo'
 import { Environment, Html } from '@react-three/drei';
-import { AnimationStore } from '../Store/AnimationStore';
 import Loader from './Loader';
 import { Bounce, ToastContainer, toast } from "react-toastify";
 import { motion,AnimatePresence } from 'framer-motion';
