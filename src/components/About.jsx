@@ -7,7 +7,7 @@ import {AnimatePresence, motion} from 'framer-motion'
 import Loader from './Loader'
 import { AnimationStore } from '../Store/AnimationStore'
 import { AiOutlineJavaScript } from "react-icons/ai";
-import { SiThreedotjs } from "react-icons/si";
+import { SiExpress, SiMongodb, SiNextdotjs, SiNodedotjs, SiPython, SiThreedotjs } from "react-icons/si";
 import { TbCircleLetterC } from "react-icons/tb";
 import { SiAdobephotoshop } from "react-icons/si";
 import { RiBootstrapLine } from "react-icons/ri";
@@ -113,7 +113,7 @@ const About = () => {
       <RiBootstrapLine className={`shadow-skill m-2 hover:scale-110 cursor-grab`} onClick={()=>{animationChanger(14)
       
       }}/>
-      <SiAdobephotoshop className={`shadow-skill m-2 hover:scale-110 cursor-grab`} onClick={()=>{animationChanger(20)
+      <SiNextdotjs className={`shadow-skill m-2 hover:scale-110 cursor-grab`} onClick={()=>{animationChanger(20)
       
       }}/>
       <TbCircleLetterC className={`shadow-skill m-2 hover:scale-110 cursor-grab`} onClick={()=>{animationChanger(23)
@@ -125,12 +125,24 @@ const About = () => {
       <SiFramer className={`shadow-skill m-2 hover:scale-110 cursor-grab`} onClick={()=>{animationChanger(25)
       
       }}/>
+      <SiMongodb className={`shadow-skill m-2 hover:scale-110 cursor-grab`} onClick={()=>{animationChanger(20)
+      
+    }}/>
       <FaGithub className={`shadow-skill m-2 hover:scale-110 cursor-grab`} onClick={()=>{animationChanger(16)
       
       }}/>
       <FaGitAlt className={`shadow-skill m-2 hover:scale-110 cursor-grab`} onClick={()=>{animationChanger(27)
       
       }}/>
+      <SiPython className={`shadow-skill m-2 hover:scale-110 cursor-grab`} onClick={()=>{animationChanger(13)
+      
+    }}/>
+      <SiExpress className={`shadow-skill m-2 hover:scale-110 cursor-grab`} onClick={()=>{animationChanger(16)
+      
+    }}/>
+      <SiNodedotjs className={`shadow-skill m-2 hover:scale-110 cursor-grab`} onClick={()=>{animationChanger(23)
+      
+    }}/>
       </div>
       </div>
     </Suspense>
