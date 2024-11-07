@@ -44,8 +44,8 @@ const projectList=[
     title:"portfolio",
     technologies:[<MdHtml/>,<MdCss/>,<AiOutlineJavaScript/>,<FaReact/>,<FaGithub/>,<RiBootstrapLine/>,<RiTailwindCssFill/>,<IoLogoFirebase/>],
     dec:"My previous portfolio reflects my journey through diverse projects, from essential text manipulation tools to innovative student marketplaces. Each project highlights my commitment to creativity, problem-solving, and delivering impactful solutions.",
-    source:"https://github.com/Nithin-2005-dev/portfolio.git",
-    link:"https://portfolio-1e17b.firebaseapp.com/",
+    source:"https://github.com/Nithin-2005-dev/new_portfolio.git",
+    link:"https://nithin-f8c59.firebaseapp.com/",
     icon:<CgBoy />,
   },
   {
@@ -62,13 +62,6 @@ const projectList=[
   icon:<CiClock2 />,
   source:"https://github.com/Nithin-2005-dev/todo.git",
   link:"https://nithin-2005-dev.github.io/todo/"
-},{
-  title:"echo-entries",
-  technologies:[<MdHtml/>,<MdCss/>,<AiOutlineJavaScript/>,<FaReact/>,<FaGithub/>,<RiTailwindCssFill/>,<IoLogoFirebase/>],
-  dec:"Echo-Entries is a simple and elegant platform for sharing your daily blogs. Capture your thoughts, document your experiences, and create a personal online journal with ease.",
-  icon:<FaBlogger />,
-  source:"https://github.com/Nithin-2005-dev/EchoEntries.git",
-  link:"https://echo-entries-mvp1.vercel.app/"
 },{
   title:"word smith",
   technologies:[<MdHtml/>,<MdCss/>,<AiOutlineJavaScript/>,<FaReact/>,<FaGithub/>,<RiBootstrapLine/>],
