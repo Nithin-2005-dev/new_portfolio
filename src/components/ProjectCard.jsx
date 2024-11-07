@@ -7,9 +7,9 @@ const ProjectCard = ({project}) => {
   return (
     <section>
     <div className='cursor-pointer'>
-    <div className='flex justify-center flex-wrap'>
+    <div className='flex justify-center flex-wrap gap-y-1-1 '>
       {project.technologies.map((icon)=>{
-        return <div className='text-3xl mx-3 text-rose-300 ' style={{ borderRadius:"50%"}}>{icon}</div>
+        return <div className='text-3xl m-2 text-rose-300 ' style={{ borderRadius:"50%"}}>{icon}</div>
       })}
     </div>
       <p className='text-center font-bold font-serif text-yellow-200' style={{fontSize:"1.5rem",textShadow:"0rem 0rem 0.5rem 5rem #e2cc8a"}}>{project.title}</p>

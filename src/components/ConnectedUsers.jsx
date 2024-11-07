@@ -6,6 +6,23 @@ import { FaWhatsapp } from "react-icons/fa";
 import BlogCard from './BlogCard';
 import { VscDebugDisconnect } from "react-icons/vsc";
 import {AnimatePresence, motion} from 'framer-motion'
+const blogs=[
+  {
+    title:'Electra Society Website for NIT Silchar',
+    body:`I developed a dynamic website for the Electra Society of NIT Silchar, aimed at enhancing student engagement and providing a centralized hub for resources, event updates, and departmental information. This platform serves the Electrical Engineering Department, showcasing student activities, academic resources, and society events, creating an interactive space for students, faculty, and visitors.,
+    `,
+    source:'https://github.com/ElectraSociety/Electra_Website.git'
+  },
+  {
+  title:"completed my new portfolio",
+  body:`🎉 My New Portfolio is Live! 🎉 \n
+I'm excited to announce that my updated portfolio is now complete! It showcases my latest projects and skills. Check it out and let me know your thoughts. Your feedback is invaluable!!! Now you can explore the source code...keep coding..Have a great day.`,
+source:"https://github.com/Nithin-2005-dev/new_portfolio.git"
+},{
+  title:"My Journey into the World of Java",
+  body:"I’ve recently started exploring the Java programming language. As an aspiring computer scientist and web developer, Java’s versatility, object-oriented approach, and strong community support make it an ideal choice. I began by learning the basics and gradually moved to object-oriented programming and core libraries. Despite challenges like mastering the syntax and error handling, hands-on projects have greatly enhanced my understanding.I'm excited to continue this journey and see where Java takes me!",
+  source:null,
+}]
 const ConnectedUsers = () => {
   const {userDetails,disconnect}=useContext(AnimationStore)
   const [pop,setPop]=useState(false)
@@ -20,16 +37,6 @@ const ConnectedUsers = () => {
   }else{
     greet=`Good night,${userDetails.displayName}! Hope you're enjoying your night`
   }
-  const blogs=[{
-    title:"completed my new portfolio",
-    body:`🎉 My New Portfolio is Live! 🎉 \n
-I'm excited to announce that my updated portfolio is now complete! It showcases my latest projects and skills. Check it out and let me know your thoughts. Your feedback is invaluable!!! Now you can explore the source code...keep coding..Have a great day.`,
-  source:"https://github.com/Nithin-2005-dev/new_portfolio.git"
-  },{
-    title:"My Journey into the World of Java",
-    body:"I’ve recently started exploring the Java programming language. As an aspiring computer scientist and web developer, Java’s versatility, object-oriented approach, and strong community support make it an ideal choice. I began by learning the basics and gradually moved to object-oriented programming and core libraries. Despite challenges like mastering the syntax and error handling, hands-on projects have greatly enhanced my understanding.I'm excited to continue this journey and see where Java takes me!",
-    source:null,
-  }]
   return (
     <AnimatePresence>
     <motion.div 
