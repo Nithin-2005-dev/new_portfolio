@@ -38,7 +38,7 @@ const Home = () => {
 </p>
     </div>
     <span className='inline-block justify-center text-sm text-white absolute bg-gray-500 bg-opacity-50 rounded-lg p-2 font-mono font-extrabold w-1/4 md-text-xl text-center' style={{top:"80%",left:"37.5%"}}>
-      <a href='https://pink-romola-60.tiiny.site/' target='_blank' className='text-center'>resume</a>
+      <a href='https://drive.google.com/file/d/1U-us8uhbPfdrs8qPl1G5zJPIYPOs_nrl/view?usp=drive_link' target='_blank' className='text-center'>resume</a>
       </span></>}
     {(position=="right" && roboOn) && <div style={{width:"25vw",right:"2%"}} className='absolute top-1/4 bg-opacity-70 bg-gray-800 virtual '>
       <p className='text-xs text-emerald-50 font-bold z-30 border-0 p-4 bodoni-moda-sc shadow-lg shadow-slate-600 robot md:text-2xl'>
