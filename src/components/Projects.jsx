@@ -1,37 +1,34 @@
 import React, { useContext } from 'react'
-import {Canvas} from '@react-three/fiber'
-import { Environment } from '@react-three/drei'
 import ProjectCard from './ProjectCard'
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
-import {AnimatePresence, color, motion} from 'framer-motion'
 import { CgBoy } from "react-icons/cg";
-import Loader from './Loader'
-import { AnimationStore } from '../Store/AnimationStore'
 import { AiOutlineJavaScript } from "react-icons/ai";
-import { SiThreedotjs } from "react-icons/si";
-import { TbCircleLetterC } from "react-icons/tb";
-import { SiAdobephotoshop } from "react-icons/si";
 import { RiBootstrapLine } from "react-icons/ri";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { IoLogoFirebase } from "react-icons/io5";
-import { FaReact,FaSchool } from "react-icons/fa";
-import { CiCalculator1 } from "react-icons/ci";
-import { FaJava } from "react-icons/fa";
+import { FaCalendarAlt, FaReact,FaSchool } from "react-icons/fa";
 import { AiFillThunderbolt } from "react-icons/ai";
 import { MdHtml } from "react-icons/md";
 import { MdCss } from "react-icons/md";
-import { SiFramer } from "react-icons/si";
-import { FaGitAlt } from "react-icons/fa";
-import { FaGithub ,FaBlogger,FaGitSquare} from "react-icons/fa";
+import { FaGithub ,FaGitSquare} from "react-icons/fa";
 import { CiClock2 } from "react-icons/ci";
 import { CiText } from "react-icons/ci";
 import { DiMongodb } from "react-icons/di";
 import { SiNextdotjs } from "react-icons/si";
 import { SiClerk,SiCloudinary } from "react-icons/si";
+
 import Header from './Header'
 import { useInView} from 'react-intersection-observer'
 const projectList=[
+  {
+    title:"event management calander",
+    technologies:[<MdHtml/>,<MdCss/>,<AiOutlineJavaScript/>,<FaGithub/>,<RiTailwindCssFill/>,<FaReact/>],
+    dec:"This application is to manage your events with user-friendly calender.user can add events by clicking on the date.user able to download monthly events",
+    source:"https://github.com/Nithin-2005-dev/event-management-application",
+    link:"https://event-calender98.netlify.app/",
+    icon:<FaCalendarAlt />
+  },
   {
     title:"electra society",
     technologies:[<MdHtml/>,<MdCss/>,<AiOutlineJavaScript/>,<FaGithub/>,<RiTailwindCssFill/>,<FaGitSquare />,<DiMongodb />,<SiNextdotjs />,<SiClerk />,<SiCloudinary />],
